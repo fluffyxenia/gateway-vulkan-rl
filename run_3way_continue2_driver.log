@@ -1,0 +1,7 @@
+=== [continue2] method 2a (continuing from 600ep checkpoint -> 900ep) ===
+=== [continue2] method 2a done ===
+=== [continue2] method 2b (continuing from 300ep checkpoint -> 600ep) ===
+=== [continue2] method 2b done ===
+=== [continue2] method 2c (continuing from 300ep checkpoint -> 600ep) ===
+=== [continue2] method 2c done ===
+=== [continue2] ALL THREE METHODS COMPLETE (2a->900ep, 2b->600ep, 2c->600ep) - WEIGHTS_FILE left on 2a's latest ===

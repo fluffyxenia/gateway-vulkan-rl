@@ -1,0 +1,58 @@
+Loaded 36 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+
+=== Training: 80 episodes, max_steps=7200, gamma=0.95, lr=0.003 ===
+[train   1/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   2/80] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   3/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   4/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   5/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   6/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   7/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   8/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   9/80] reward=+3.0 checkpoints= 3/34 len=7200 outcome=timeout
+[train  10/80] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  11/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  12/80] reward=+7.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  13/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  14/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  15/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  16/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  17/80] reward=+9.0 checkpoints= 9/34 len=7200 outcome=timeout
+[train  18/80] reward=+6.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  19/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  20/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  21/80] reward=+6.0 checkpoints= 7/34 len=5949 outcome=hazard
+[train  22/80] reward=+7.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  23/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  24/80] reward=+7.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  25/80] reward=+4.0 checkpoints= 6/34 len=4531 outcome=hazard
+[train  26/80] reward=+6.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  27/80] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  28/80] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  29/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  30/80] reward=+5.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  31/80] reward=+5.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  32/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  33/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  34/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  35/80] reward=+8.0 checkpoints= 7/34 len=7200 outcome=timeout
+[train  36/80] reward=+9.0 checkpoints= 9/34 len=7200 outcome=timeout
+[train  37/80] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  38/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  39/80] reward=+8.0 checkpoints= 7/34 len=7200 outcome=timeout
+[train  40/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  41/80] reward=+9.0 checkpoints= 8/34 len=7200 outcome=timeout
+[train  42/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  43/80] reward=+3.0 checkpoints= 3/34 len=7200 outcome=timeout
+[train  44/80] reward=+6.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  45/80] reward=+3.0 checkpoints= 3/34 len=7200 outcome=timeout
+[train  46/80] reward=+10.0 checkpoints=10/34 len=7200 outcome=timeout
+[train  47/80] reward=+8.0 checkpoints= 7/34 len=7200 outcome=timeout
+[train  48/80] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train  49/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  50/80] reward=+7.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  51/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  52/80] reward=+7.0 checkpoints= 6/34 len=7200 outcome=timeout
+[train  53/80] reward=+11.0 checkpoints=10/34 len=7200 outcome=timeout
+[train  54/80] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train  55/80] reward=+12.0 checkpoints=11/34 len=7200 outcome=timeout

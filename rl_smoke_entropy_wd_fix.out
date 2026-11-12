@@ -1,0 +1,192 @@
+Loaded 37 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+Warm-starting from existing weights file: /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (e.g. a BC-pretrained checkpoint, or a previous run's progress, deliberately left in place)
+Action-sequence logs for this run -> /home/foxo/gateway-vulkan-rl/action_logs/20261108_000121/ (one .npy per episode, replayable later via replay_episode.py)
+
+=== Training: 40 episodes, max_steps=3000, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 65.7 MiB
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Vega 10 Graphics (RADV RAVEN) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Loaded existing weights from /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (288658 params)
+sonic_policy_server ready: IW=80 IH=56 N_BUTTONS=10 FLAT=4480 (persistent INFER graph allocated once, TRAIN graph rebuilt per call)
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.050457
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   1/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.0505 [mem] VmRSS=182.6 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.298763
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   2/40] reward=+3.5 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.2988
+TRAIN: T=312 minibatch_size=312 n_minibatches/epoch=1 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.095164
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   3/40] reward=-0.5 checkpoints= 0/34 len= 312 outcome=cp_terminated pg_loss=-0.0952
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.264646
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   4/40] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout pg_loss=-0.2646
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.377989
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   5/40] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout pg_loss=-0.3780
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.046014
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   6/40] reward=+5.5 checkpoints= 6/34 len=3000 outcome=timeout pg_loss=-0.0460
+TRAIN: T=455 minibatch_size=455 n_minibatches/epoch=1 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.027068
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   7/40] reward=-0.5 checkpoints= 0/34 len= 455 outcome=cp_terminated pg_loss=-0.0271
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000973
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   8/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0010
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000982
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   9/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0010
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003263
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  10/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0033 [mem] VmRSS=182.7 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.002585
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  11/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0026
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.118409
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  12/40] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.1184
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.290629
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  13/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.2906
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.019784
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  14/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=+0.0198
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.122861
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  15/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.1229
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.041407
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  16/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=+0.0414
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.046279
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  17/40] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=+0.0463
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.055108
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  18/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=+0.0551
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.011256
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  19/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=+0.0113
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.054979
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  20/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=-0.0550 [mem] VmRSS=182.8 MiB
+  [health ep20] per-button mean=[0.0, 0.0, 0.0, 0.0, 0.0020000000949949026, 0.9940000176429749, 0.4699999988079071, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.014000000432133675, 0.028999999165534973, 0.06700000166893005, 0.4099999964237213, 0.0, 0.0, 0.0] (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.084313
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  21/40] reward=+10.0 checkpoints=10/34 len=3000 outcome=timeout pg_loss=-0.0843
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.079242
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  22/40] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout pg_loss=-0.0792
+TRAIN: T=573 minibatch_size=573 n_minibatches/epoch=1 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.044167
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  23/40] reward=-0.5 checkpoints= 0/34 len= 573 outcome=cp_terminated pg_loss=+0.0442
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003573
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  24/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0036
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001102
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  25/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0011
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001671
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  26/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0017
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000270
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  27/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0003
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000770
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  28/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0008
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001672
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  29/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0017
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.002747
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  30/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0027 [mem] VmRSS=191.4 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003833
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  31/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0038
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001942
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  32/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0019
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.005802
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  33/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0058
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003670
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  34/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0037
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001120
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  35/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0011
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.004505
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  36/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0045
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.008746
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  37/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0087
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.008807
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  38/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0088
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.008910
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  39/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0089
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.007329
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  40/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0073 [mem] VmRSS=191.5 MiB
+  [health ep40] per-button mean=[0.3479999899864197, 0.3970000147819519, 0.36500000953674316, 0.9129999876022339, 0.9900000095367432, 0.020999999716877937, 1.0, 0.2549999952316284, 0.028999999165534973, 0.019999999552965164] std=[0.026000000536441803, 0.029999999329447746, 0.03700000047683716, 0.041999999433755875, 0.004999999888241291, 0.017999999225139618, 0.0, 0.035999998450279236, 0.012000000104308128, 0.004999999888241291] (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+Training phase took 610.3s for 40 episodes
+[mem] VmRSS after training phase: 140.2 MiB
+
+=== Baseline: 5 random-policy episodes (no learning, no net) ===
+[baseline   1/5] reward=+3.0 checkpoints= 3 len=3000 outcome=timeout [mem] VmRSS=191.5 MiB
+[baseline   2/5] reward=+2.0 checkpoints= 2 len=3000 outcome=timeout
+[baseline   3/5] reward=-0.5 checkpoints= 0 len= 301 outcome=cp_terminated
+[baseline   4/5] reward=+2.0 checkpoints= 2 len=3000 outcome=timeout
+[baseline   5/5] reward=-0.5 checkpoints= 0 len=1437 outcome=cp_terminated
+[mem] VmRSS after baseline phase: 140.3 MiB
+[mem] Peak VmRSS for this process (getrusage ru_maxrss), whole run: 1947.5 MiB
+
+=== SUMMARY ===
+Training episodes 1-20 (early): mean_reward=+3.75 (std=2.97) mean_checkpoints=3.70 max_checkpoints=9
+Training episodes 21-40 (late): mean_reward=+0.62 (std=2.25) mean_checkpoints=0.65 max_checkpoints=10
+All training episodes: mean_reward=+2.19 (std=3.07) mean_checkpoints=2.17 max_checkpoints=10
+Random-policy baseline: mean_reward=+1.20 (std=1.44) mean_checkpoints=1.40 max_checkpoints=3
+Shutting down policy server (flushing weights)...
+QUIT received - flushing weights
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin

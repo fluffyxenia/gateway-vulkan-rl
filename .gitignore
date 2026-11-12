@@ -1,0 +1,22 @@
+# Copyrighted game assets - never commit these
+roms/
+*.state
+*.md5
+
+# Local Python environment
+venv/
+__pycache__/
+*.pyc
+
+# Large regenerable training-batch dumps (not useful to anyone else, easily regenerated)
+bc_pretrain_batch.bin
+sonic_rl_batch.bin
+retro_batch.bin
+
+# Editor/backup cruft - real history lives in git commits, not *.bak files
+*.bak
+*.bak-*
+
+# OS/editor noise
+.DS_Store
+nohup.out

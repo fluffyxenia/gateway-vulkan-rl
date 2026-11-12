@@ -1,0 +1,614 @@
+Loaded 37 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+Warm-starting from existing weights file: /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (e.g. a BC-pretrained checkpoint, or a previous run's progress, deliberately left in place)
+Action-sequence logs for this run -> /home/foxo/gateway-vulkan-rl/action_logs/20261107_234843/ (one .npy per episode, replayable later via replay_episode.py)
+
+=== Training: 40 episodes, max_steps=3000, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 65.7 MiB
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Vega 10 Graphics (RADV RAVEN) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Loaded existing weights from /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (288658 params)
+sonic_policy_server ready: IW=80 IH=56 N_BUTTONS=10 FLAT=4480 (persistent INFER graph allocated once, TRAIN graph rebuilt per call)
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.050462
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   1/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.0505 [mem] VmRSS=182.6 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.226902
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   2/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.2269
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = 0.000138
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   3/40] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout pg_loss=+0.0001
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.004136
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   4/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0041
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.402050
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   5/40] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout pg_loss=-0.4021
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.002642
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   6/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=-0.0026
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -1.367959
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   7/40] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout pg_loss=-1.3680
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.013868
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   8/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=-0.0139
+TRAIN: T=1239 minibatch_size=1239 n_minibatches/epoch=1 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.011048
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   9/40] reward=+3.0 checkpoints= 5/34 len=1239 outcome=died pg_loss=-0.0110
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.086254
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  10/40] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.0863 [mem] VmRSS=202.7 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.296928
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  11/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.2969
+/home/foxo/gateway-vulkan-rl/policy_net.py:50: RuntimeWarning: overflow encountered in exp
+  return x / (1.0 + np.exp(-x))
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+ -> epoch 1/1 average pg_loss = -0.076256
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  12/40] reward=+16.0 checkpoints=16/34 len=3000 outcome=timeout pg_loss=-0.0763
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  13/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  14/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  15/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  16/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  17/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  18/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  19/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  20/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan [mem] VmRSS=202.8 MiB
+  [health ep20] per-button mean=[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan] std=[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan] (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  21/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  22/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  23/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  24/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  25/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  26/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  27/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  28/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  29/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  30/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan [mem] VmRSS=211.2 MiB
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  31/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  32/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  33/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  34/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  35/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  36/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  37/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  38/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  39/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan
+TRAIN: T=3000 minibatch_size=1500 n_minibatches/epoch=2 nepoch=1 lr=0.003 entropy_coef=0.003 weight_decay=0.01
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 1 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+  [nan-diag] non-finite loss detected at epoch 1 minibatch 2 - dumping parameter stats:
+    [nan-diag] kernel1    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] kernel2    max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d1       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] w_d2       max|finite_val|=0  contains_non_finite=YES
+    [nan-diag] b_d2       max|finite_val|=0  contains_non_finite=YES
+ -> epoch 1/1 average pg_loss = nan
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+WARNING: TRAIN call reported a non-finite loss at least once this episode (status=1) - see server stderr in this same log for the [nan-diag] parameter dump
+[train  40/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+nan [mem] VmRSS=211.1 MiB
+  [health ep40] per-button mean=[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan] std=[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan] (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+Training phase took 634.0s for 40 episodes
+[mem] VmRSS after training phase: 159.8 MiB
+
+=== Baseline: 5 random-policy episodes (no learning, no net) ===
+[baseline   1/5] reward=-0.5 checkpoints= 0 len= 778 outcome=cp_terminated [mem] VmRSS=160.0 MiB
+[baseline   2/5] reward=-0.5 checkpoints= 0 len= 447 outcome=cp_terminated
+[baseline   3/5] reward=-0.5 checkpoints= 0 len= 301 outcome=cp_terminated
+[baseline   4/5] reward=+2.0 checkpoints= 2 len=3000 outcome=timeout
+[baseline   5/5] reward=+2.0 checkpoints= 2 len=3000 outcome=timeout
+[mem] VmRSS after baseline phase: 160.0 MiB
+[mem] Peak VmRSS for this process (getrusage ru_maxrss), whole run: 1967.1 MiB
+
+=== SUMMARY ===
+Training episodes 1-20 (early): mean_reward=+2.75 (std=3.94) mean_checkpoints=2.80 max_checkpoints=16
+Training episodes 21-40 (late): mean_reward=+0.00 (std=0.00) mean_checkpoints=0.00 max_checkpoints=0
+All training episodes: mean_reward=+1.38 (std=3.10) mean_checkpoints=1.40 max_checkpoints=16
+Random-policy baseline: mean_reward=+0.50 (std=1.22) mean_checkpoints=0.80 max_checkpoints=2
+Shutting down policy server (flushing weights)...
+QUIT received - flushing weights
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin

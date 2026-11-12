@@ -1,0 +1,111 @@
+=== Building combined BC batch from 5 demo file(s) ===
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz
+  raw actions shape: (2259, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2259 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] NOTE: using OVERRIDE box x=[11200.0,11230.0] y=[950.0,1050.0] instead of coords.list's y=[700,900] - coords.list itself has NOT been modified.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 1982/2259 (276 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1983 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz
+  raw actions shape: (1923, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 1923 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] NOTE: using OVERRIDE box x=[11200.0,11230.0] y=[950.0,1050.0] instead of coords.list's y=[700,900] - coords.list itself has NOT been modified.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 1713/1923 (209 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1714 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz
+  raw actions shape: (2568, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2568 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] NOTE: using OVERRIDE box x=[11200.0,11230.0] y=[950.0,1050.0] instead of coords.list's y=[700,900] - coords.list itself has NOT been modified.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 2186/2568 (381 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2187 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz
+  raw actions shape: (2734, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2734 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] NOTE: using OVERRIDE box x=[11200.0,11230.0] y=[950.0,1050.0] instead of coords.list's y=[700,900] - coords.list itself has NOT been modified.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 2343/2734 (390 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2344 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz
+  raw actions shape: (2056, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2056 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] NOTE: using OVERRIDE box x=[11200.0,11230.0] y=[950.0,1050.0] instead of coords.list's y=[700,900] - coords.list itself has NOT been modified.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 1743/2056 (312 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1744 frames (up to and including the cutscene-trigger entry)
+
+Combined batch: 9972 total frames from 5 demo(s)
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz: 1983 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz: 1714 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz: 2187 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz: 2344 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz: 1744 frames, sanity_check_passed=False
+  WARNING: at least one demo failed/warned on the cutscene-trigger sanity check (see detail above) - still including it in the combined batch, but worth reviewing before trusting the pretrained result.
+
+=== Running BC pretraining: 9972 frames, 60 epochs, lr=0.01, entropy_coef=0 (pure BCE) ===
+No existing weights at /home/foxo/gateway-vulkan-rl/sonic_policy_weights_bc_pretrained.bin - randomly initialized 143758 params
+Policy net (v2, multi-label): conv2d(1->4,3x3) -> SiLU -> avgpool2x2 -> dense(4480->32->10 sigmoid), REINFORCE loss
+nbatch=9972 nepoch=60 lr=0.01 entropy_coef=0
+  epoch 1/60: pg_loss = 7.569462
+  epoch 2/60: pg_loss = 4.014696
+  epoch 3/60: pg_loss = 2.278133
+  epoch 4/60: pg_loss = 1.467857
+  epoch 5/60: pg_loss = 1.295421
+  epoch 6/60: pg_loss = 1.328653
+  epoch 7/60: pg_loss = 1.273547
+  epoch 8/60: pg_loss = 1.160152
+  epoch 9/60: pg_loss = 1.129363
+  epoch 10/60: pg_loss = 1.142193
+  epoch 11/60: pg_loss = 1.159783
+  epoch 12/60: pg_loss = 1.143394
+  epoch 13/60: pg_loss = 1.109048
+  epoch 14/60: pg_loss = 1.095957
+  epoch 15/60: pg_loss = 1.118210
+  epoch 16/60: pg_loss = 1.105079
+  epoch 17/60: pg_loss = 1.071367
+  epoch 18/60: pg_loss = 1.065308
+  epoch 19/60: pg_loss = 1.073301
+  epoch 20/60: pg_loss = 1.069898
+  epoch 21/60: pg_loss = 1.050295
+  epoch 22/60: pg_loss = 1.031819
+  epoch 23/60: pg_loss = 1.023615
+  epoch 24/60: pg_loss = 1.028911
+  epoch 25/60: pg_loss = 1.032054
+  epoch 26/60: pg_loss = 1.020548
+  epoch 27/60: pg_loss = 1.004422
+  epoch 28/60: pg_loss = 0.993248
+  epoch 29/60: pg_loss = 0.987472
+  epoch 30/60: pg_loss = 0.987532
+  epoch 31/60: pg_loss = 0.985496
+  epoch 32/60: pg_loss = 0.973920
+  epoch 33/60: pg_loss = 0.960770
+  epoch 34/60: pg_loss = 0.956403
+  epoch 35/60: pg_loss = 0.951995
+  epoch 36/60: pg_loss = 0.944327
+  epoch 37/60: pg_loss = 0.937422
+  epoch 38/60: pg_loss = 0.928966
+  epoch 39/60: pg_loss = 0.923092
+  epoch 40/60: pg_loss = 0.916847
+  epoch 41/60: pg_loss = 0.908314
+  epoch 42/60: pg_loss = 0.900307
+  epoch 43/60: pg_loss = 0.893108
+  epoch 44/60: pg_loss = 0.889099
+  epoch 45/60: pg_loss = 0.880294
+  epoch 46/60: pg_loss = 0.872089
+  epoch 47/60: pg_loss = 0.864919
+  epoch 48/60: pg_loss = 0.859175
+  epoch 49/60: pg_loss = 0.851501
+  epoch 50/60: pg_loss = 0.843125
+  epoch 51/60: pg_loss = 0.835670
+  epoch 52/60: pg_loss = 0.829277
+  epoch 53/60: pg_loss = 0.820093
+  epoch 54/60: pg_loss = 0.812997
+  epoch 55/60: pg_loss = 0.806094
+  epoch 56/60: pg_loss = 0.798612
+  epoch 57/60: pg_loss = 0.790396
+  epoch 58/60: pg_loss = 0.782722
+  epoch 59/60: pg_loss = 0.775482
+  epoch 60/60: pg_loss = 0.767876
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights_bc_pretrained.bin
+
+BC-pretrained weights written to /home/foxo/gateway-vulkan-rl/sonic_policy_weights_bc_pretrained.bin
+LEARNABLE_BUTTONS order (for reference): ['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z']
+
+To actually use this as the RL starting point: copy/rename this file over sonic_rl_train.py's WEIGHTS_FILE (sonic_policy_weights.bin) BEFORE launching a training run - this script deliberately does not do that automatically.
+EXIT=0

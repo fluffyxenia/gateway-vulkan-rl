@@ -1,0 +1,1599 @@
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Vega 10 Graphics (RADV RAVEN) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Loaded existing weights from /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (288658 params)
+sonic_policy_server ready: IW=80 IH=56 N_BUTTONS=10 FLAT=4480 (persistent INFER graph allocated once, TRAIN graph rebuilt per call)
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.223871
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+Loaded 72 checkpoint boxes (64 checkpoint, 1 enemy, 3 hazard, 1 end-trigger) extend_past_end=True start_mode=mid
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz
+  raw actions shape (post player-0 slice if applicable): (2259, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2259 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check: old cutscene trigger] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2160/2259 (98 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2161 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz
+  raw actions shape (post player-0 slice if applicable): (1923, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 1923 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check: old cutscene trigger] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 1887/1923 (35 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1888 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz
+  raw actions shape (post player-0 slice if applicable): (2568, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2568 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check: old cutscene trigger] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2429/2568 (138 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2430 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz
+  raw actions shape (post player-0 slice if applicable): (2734, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2734 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check: old cutscene trigger] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2580/2734 (153 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2581 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz
+  raw actions shape (post player-0 slice if applicable): (2056, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2056 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check: old cutscene trigger] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 1923/2056 (132 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1924 frames (up to and including the cutscene-trigger entry)
+Health-check reference batch: 10984 real demo frames, majority-class baseline accuracy=0.9674
+Warm-starting from existing weights file: /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (e.g. a BC-pretrained checkpoint, or a previous run's progress, deliberately left in place)
+Action-sequence logs for this run -> /home/foxo/gateway-vulkan-rl/action_logs/20261109_193844/ (one .npy per episode, replayable later via replay_episode.py)
+
+=== Training: 300 episodes, max_steps=4000, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 264.0 MiB
+  [anchor-check] episode mean(bce*advantage)=-0.0339  anchor mean(bce)*weight=+0.4081  (anchor rows=300/4300=7.0% of combined batch)
+[train   1/300] reward=+2.6 checkpoints= 3/66 len=4000 outcome=timeout ring_r=-0.360 score_r=+0.000 pg_loss=-0.2239 [mem] VmRSS=475.9 MiB sys_avail=3946 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.006111
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0351  anchor mean(bce)*weight=+1.6055  (anchor rows=300/4300=7.0% of combined batch)
+[train   2/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0061 [mem] VmRSS=452.2 MiB sys_avail=3955 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.277529
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0440  anchor mean(bce)*weight=+1.1572  (anchor rows=300/4300=7.0% of combined batch)
+[train   3/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.060 score_r=+0.000 pg_loss=-0.2775 [mem] VmRSS=465.9 MiB sys_avail=3931 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.217236
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0760  anchor mean(bce)*weight=+1.0364  (anchor rows=300/4300=7.0% of combined batch)
+[train   4/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=-0.2172 [mem] VmRSS=465.9 MiB sys_avail=3938 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022414
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0105  anchor mean(bce)*weight=+1.5776  (anchor rows=300/4300=7.0% of combined batch)
+[train   5/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.060 score_r=+0.000 pg_loss=+0.0224 [mem] VmRSS=479.4 MiB sys_avail=3922 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.123339
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0527  anchor mean(bce)*weight=+0.7113  (anchor rows=300/4300=7.0% of combined batch)
+[train   6/300] reward=+12.8 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=-0.1233 [mem] VmRSS=479.6 MiB sys_avail=3913 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.058194
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0000  anchor mean(bce)*weight=+1.2851  (anchor rows=300/4300=7.0% of combined batch)
+[train   7/300] reward=+0.0 checkpoints= 0/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0582 [mem] VmRSS=421.5 MiB sys_avail=3969 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.058510
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0524  anchor mean(bce)*weight=+0.5535  (anchor rows=300/4300=7.0% of combined batch)
+[train   8/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=-0.0585 [mem] VmRSS=479.6 MiB sys_avail=3926 MiB
+TRAIN: T=1372 minibatch_size=1372 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.231014
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0024  anchor mean(bce)*weight=+1.0645  (anchor rows=300/1372=21.9% of combined batch)
+[train   9/300] reward=+2.0 checkpoints= 4/66 len=1072 outcome=hazard ring_r=+0.050 score_r=+0.000 pg_loss=+0.2310 [mem] VmRSS=385.7 MiB sys_avail=3993 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.488401
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1659  anchor mean(bce)*weight=+0.6604  (anchor rows=300/4300=7.0% of combined batch)
+[train  10/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.070 score_r=+0.000 pg_loss=-0.4884 [mem] VmRSS=452.2 MiB sys_avail=3916 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.060266
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0048  anchor mean(bce)*weight=+0.9748  (anchor rows=300/4300=7.0% of combined batch)
+[train  11/300] reward=+10.7 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=+0.0603 [mem] VmRSS=452.0 MiB sys_avail=3923 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.277808
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0494  anchor mean(bce)*weight=+0.6765  (anchor rows=300/4300=7.0% of combined batch)
+[train  12/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=-0.2778 [mem] VmRSS=479.3 MiB sys_avail=3898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.100884
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0002  anchor mean(bce)*weight=+1.3404  (anchor rows=300/4300=7.0% of combined batch)
+[train  13/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1009 [mem] VmRSS=451.9 MiB sys_avail=3929 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.119046
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0291  anchor mean(bce)*weight=+0.9383  (anchor rows=300/4300=7.0% of combined batch)
+[train  14/300] reward=+10.1 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.080 score_r=+0.000 pg_loss=-0.1190 [mem] VmRSS=479.7 MiB sys_avail=3895 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.233816
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0080  anchor mean(bce)*weight=+0.9382  (anchor rows=300/4300=7.0% of combined batch)
+[train  15/300] reward=+16.2 checkpoints=16/66 len=4000 outcome=timeout ring_r=+0.210 score_r=+0.000 pg_loss=+0.2338 [mem] VmRSS=479.7 MiB sys_avail=3906 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.049247
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0342  anchor mean(bce)*weight=+0.4570  (anchor rows=300/4300=7.0% of combined batch)
+[train  16/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.230 score_r=+0.000 pg_loss=+0.0492 [mem] VmRSS=465.9 MiB sys_avail=3920 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.011652
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0424  anchor mean(bce)*weight=+0.9768  (anchor rows=300/4300=7.0% of combined batch)
+[train  17/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0117 [mem] VmRSS=479.5 MiB sys_avail=3908 MiB
+TRAIN: T=590 minibatch_size=590 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.273967
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0433  anchor mean(bce)*weight=+0.5805  (anchor rows=300/590=50.8% of combined batch)
+[train  18/300] reward=+0.5 checkpoints= 1/66 len= 290 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.2740 [mem] VmRSS=397.3 MiB sys_avail=3986 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.171902
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0428  anchor mean(bce)*weight=+0.5534  (anchor rows=300/4300=7.0% of combined batch)
+[train  19/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1719 [mem] VmRSS=479.5 MiB sys_avail=3900 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.137039
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0207  anchor mean(bce)*weight=+1.1629  (anchor rows=300/4300=7.0% of combined batch)
+[train  20/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=-0.1370 [mem] VmRSS=476.0 MiB sys_avail=3898 MiB
+  [health ep20] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.0, 0.01600000075995922, 0.9860000014305115, 0.054999999701976776, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.0010000000474974513, 0.09399999678134918, 0.07500000298023224, 0.14000000059604645, 0.0, 0.0, 0.0] overall_accuracy=0.9713 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.062489
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0080  anchor mean(bce)*weight=+1.1062  (anchor rows=300/4300=7.0% of combined batch)
+[train  21/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0625 [mem] VmRSS=476.2 MiB sys_avail=3895 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.244726
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0117  anchor mean(bce)*weight=+0.7823  (anchor rows=300/4300=7.0% of combined batch)
+[train  22/300] reward=+13.8 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.2447 [mem] VmRSS=476.1 MiB sys_avail=3898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.138591
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0455  anchor mean(bce)*weight=+0.9722  (anchor rows=300/4300=7.0% of combined batch)
+[train  23/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=-0.1386 [mem] VmRSS=476.1 MiB sys_avail=3898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.061879
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0339  anchor mean(bce)*weight=+0.7145  (anchor rows=300/4300=7.0% of combined batch)
+[train  24/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=+0.0619 [mem] VmRSS=476.2 MiB sys_avail=3895 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.131692
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1065  anchor mean(bce)*weight=+0.9428  (anchor rows=300/4300=7.0% of combined batch)
+[train  25/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=-0.1317 [mem] VmRSS=466.1 MiB sys_avail=3916 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029468
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0008  anchor mean(bce)*weight=+0.9385  (anchor rows=300/4300=7.0% of combined batch)
+[train  26/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=+0.0295 [mem] VmRSS=421.6 MiB sys_avail=3950 MiB
+TRAIN: T=600 minibatch_size=600 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.380821
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1214  anchor mean(bce)*weight=+0.8829  (anchor rows=300/600=50.0% of combined batch)
+[train  27/300] reward=+0.5 checkpoints= 1/66 len= 300 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.3808 [mem] VmRSS=397.4 MiB sys_avail=3978 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.002821
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0195  anchor mean(bce)*weight=+0.4142  (anchor rows=300/4300=7.0% of combined batch)
+[train  28/300] reward=+10.8 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0028 [mem] VmRSS=421.6 MiB sys_avail=3953 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -5.807774
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0674  anchor mean(bce)*weight=+0.7030  (anchor rows=300/4300=7.0% of combined batch)
+[train  29/300] reward=+8.7 checkpoints= 9/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=-5.8078 [mem] VmRSS=465.9 MiB sys_avail=3908 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 4.555727
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0000  anchor mean(bce)*weight=+127.6429  (anchor rows=300/4300=7.0% of combined batch)
+[train  30/300] reward=+0.0 checkpoints= 0/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+4.5557 [mem] VmRSS=465.9 MiB sys_avail=3897 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -1.310663
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0743  anchor mean(bce)*weight=+1.2288  (anchor rows=300/4300=7.0% of combined batch)
+[train  31/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.110 score_r=+0.000 pg_loss=-1.3107 [mem] VmRSS=465.9 MiB sys_avail=3899 MiB
+TRAIN: T=1492 minibatch_size=1492 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 1.269752
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0162  anchor mean(bce)*weight=+6.3754  (anchor rows=300/1492=20.1% of combined batch)
+[train  32/300] reward=+0.1 checkpoints= 1/66 len=1192 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+1.2698 [mem] VmRSS=410.8 MiB sys_avail=3333 MiB
+TRAIN: T=595 minibatch_size=595 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.295720
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0281  anchor mean(bce)*weight=+0.6142  (anchor rows=300/595=50.4% of combined batch)
+[train  33/300] reward=+0.5 checkpoints= 1/66 len= 295 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.2957 [mem] VmRSS=397.4 MiB sys_avail=3343 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.303190
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0535  anchor mean(bce)*weight=+0.7383  (anchor rows=300/4300=7.0% of combined batch)
+[train  34/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.220 score_r=+0.000 pg_loss=-0.3032 [mem] VmRSS=479.8 MiB sys_avail=3262 MiB
+TRAIN: T=3407 minibatch_size=1703 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.068996
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0029  anchor mean(bce)*weight=+0.8780  (anchor rows=300/3407=8.8% of combined batch)
+[train  35/300] reward=+6.1 checkpoints= 8/66 len=3107 outcome=died ring_r=+0.090 score_r=+0.000 pg_loss=+0.0690 [mem] VmRSS=392.6 MiB sys_avail=3247 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.066672
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0581  anchor mean(bce)*weight=+0.6275  (anchor rows=300/4300=7.0% of combined batch)
+[train  36/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=-0.0667 [mem] VmRSS=476.3 MiB sys_avail=3159 MiB
+TRAIN: T=2297 minibatch_size=1148 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.003267
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0928  anchor mean(bce)*weight=+1.2128  (anchor rows=300/2297=13.1% of combined batch)
+[train  37/300] reward=+3.1 checkpoints= 5/66 len=1997 outcome=hazard ring_r=+0.110 score_r=+0.000 pg_loss=+0.0033 [mem] VmRSS=431.5 MiB sys_avail=3233 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.066346
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0706  anchor mean(bce)*weight=+0.4407  (anchor rows=300/4300=7.0% of combined batch)
+[train  38/300] reward=+9.7 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=-0.0663 [mem] VmRSS=476.4 MiB sys_avail=3174 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.054877
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0057  anchor mean(bce)*weight=+0.9716  (anchor rows=300/4300=7.0% of combined batch)
+[train  39/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0549 [mem] VmRSS=476.4 MiB sys_avail=3166 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.014144
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0236  anchor mean(bce)*weight=+0.7125  (anchor rows=300/4300=7.0% of combined batch)
+[train  40/300] reward=+3.0 checkpoints= 3/66 len=4000 outcome=timeout ring_r=+0.020 score_r=+0.000 pg_loss=+0.0141 [mem] VmRSS=479.5 MiB sys_avail=3170 MiB
+  [health ep40] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.0430000014603138, 0.052000001072883606, 0.7519999742507935, 0.26600000262260437, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.14000000059604645, 0.1899999976158142, 0.33500000834465027, 0.3199999928474426, 0.0, 0.0, 0.0] overall_accuracy=0.9684 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.041435
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0005  anchor mean(bce)*weight=+0.6864  (anchor rows=300/4300=7.0% of combined batch)
+[train  41/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0414 [mem] VmRSS=479.8 MiB sys_avail=3170 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029145
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0035  anchor mean(bce)*weight=+0.4480  (anchor rows=300/4300=7.0% of combined batch)
+[train  42/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0291 [mem] VmRSS=479.5 MiB sys_avail=3171 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.047578
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0078  anchor mean(bce)*weight=+0.4454  (anchor rows=300/4300=7.0% of combined batch)
+[train  43/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0476 [mem] VmRSS=479.6 MiB sys_avail=3178 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.044158
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0074  anchor mean(bce)*weight=+0.3961  (anchor rows=300/4300=7.0% of combined batch)
+[train  44/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0442 [mem] VmRSS=421.8 MiB sys_avail=3231 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.031304
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0047  anchor mean(bce)*weight=+0.4102  (anchor rows=300/4300=7.0% of combined batch)
+[train  45/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0313 [mem] VmRSS=479.6 MiB sys_avail=3177 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.055620
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0554  anchor mean(bce)*weight=+0.4304  (anchor rows=300/4300=7.0% of combined batch)
+[train  46/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0556 [mem] VmRSS=421.8 MiB sys_avail=3236 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.322771
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1693  anchor mean(bce)*weight=+0.9699  (anchor rows=300/4300=7.0% of combined batch)
+[train  47/300] reward=+3.0 checkpoints= 3/66 len=4000 outcome=timeout ring_r=+0.020 score_r=+0.000 pg_loss=-0.3228 [mem] VmRSS=476.4 MiB sys_avail=3173 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.129674
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0532  anchor mean(bce)*weight=+0.6308  (anchor rows=300/4300=7.0% of combined batch)
+[train  48/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1297 [mem] VmRSS=421.9 MiB sys_avail=3228 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.038248
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0025  anchor mean(bce)*weight=+0.6639  (anchor rows=300/4300=7.0% of combined batch)
+[train  49/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0382 [mem] VmRSS=421.7 MiB sys_avail=3240 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022634
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0135  anchor mean(bce)*weight=+0.5275  (anchor rows=300/4300=7.0% of combined batch)
+[train  50/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0226 [mem] VmRSS=479.6 MiB sys_avail=3177 MiB
+  [defeat-rate bucket] episodes 1-50: boss_defeat_rate=0.000 (0/50) mean_reward=+5.49 mean_checkpoints=5.70
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.018030
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0057  anchor mean(bce)*weight=+0.4239  (anchor rows=300/4300=7.0% of combined batch)
+[train  51/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0180 [mem] VmRSS=467.0 MiB sys_avail=3190 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.084136
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0661  anchor mean(bce)*weight=+0.4301  (anchor rows=300/4300=7.0% of combined batch)
+[train  52/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0841 [mem] VmRSS=467.2 MiB sys_avail=3181 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.033449
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0030  anchor mean(bce)*weight=+0.5314  (anchor rows=300/4300=7.0% of combined batch)
+[train  53/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0334 [mem] VmRSS=480.8 MiB sys_avail=3166 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.004887
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0361  anchor mean(bce)*weight=+0.5633  (anchor rows=300/4300=7.0% of combined batch)
+[train  54/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.110 score_r=+0.000 pg_loss=+0.0049 [mem] VmRSS=467.2 MiB sys_avail=3184 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.021743
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0068  anchor mean(bce)*weight=+0.6275  (anchor rows=300/4300=7.0% of combined batch)
+[train  55/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0217 [mem] VmRSS=467.2 MiB sys_avail=3180 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.010312
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0415  anchor mean(bce)*weight=+0.6926  (anchor rows=300/4300=7.0% of combined batch)
+[train  56/300] reward=+12.8 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.200 score_r=+0.000 pg_loss=-0.0103 [mem] VmRSS=467.1 MiB sys_avail=3185 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.096203
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0282  anchor mean(bce)*weight=+0.5761  (anchor rows=300/4300=7.0% of combined batch)
+[train  57/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=-0.0962 [mem] VmRSS=422.7 MiB sys_avail=3232 MiB
+TRAIN: T=1688 minibatch_size=1688 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.175528
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0491  anchor mean(bce)*weight=+1.2150  (anchor rows=300/1688=17.8% of combined batch)
+[train  58/300] reward=+0.1 checkpoints= 1/66 len=1388 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.1755 [mem] VmRSS=429.4 MiB sys_avail=3228 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.179551
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0678  anchor mean(bce)*weight=+0.3514  (anchor rows=300/4300=7.0% of combined batch)
+[train  59/300] reward=+10.1 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=-0.1796 [mem] VmRSS=429.5 MiB sys_avail=3222 MiB
+TRAIN: T=1934 minibatch_size=1934 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.175313
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0306  anchor mean(bce)*weight=+0.9633  (anchor rows=300/1934=15.5% of combined batch)
+[train  60/300] reward=+2.6 checkpoints= 5/66 len=1634 outcome=hazard ring_r=-0.350 score_r=+0.000 pg_loss=+0.1753 [mem] VmRSS=425.3 MiB sys_avail=2880 MiB
+  [health ep60] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.004999999888241291, 0.0, 0.041999999433755875, 0.035999998450279236, 0.5379999876022339, 0.18700000643730164, 0.0, 0.0, 0.0] std=[0.0010000000474974513, 0.010999999940395355, 0.0020000000949949026, 0.11900000274181366, 0.15700000524520874, 0.335999995470047, 0.2669999897480011, 0.0010000000474974513, 0.0010000000474974513, 0.0010000000474974513] overall_accuracy=0.9552 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.305186
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1332  anchor mean(bce)*weight=+0.5759  (anchor rows=300/4300=7.0% of combined batch)
+[train  61/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.150 score_r=+0.000 pg_loss=-0.3052 [mem] VmRSS=467.1 MiB sys_avail=2865 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.056587
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0378  anchor mean(bce)*weight=+0.7356  (anchor rows=300/4300=7.0% of combined batch)
+[train  62/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=-0.0566 [mem] VmRSS=480.9 MiB sys_avail=2847 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.187196
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0599  anchor mean(bce)*weight=+0.7467  (anchor rows=300/4300=7.0% of combined batch)
+[train  63/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=-0.1872 [mem] VmRSS=429.6 MiB sys_avail=2903 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.113410
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0114  anchor mean(bce)*weight=+1.8609  (anchor rows=300/4300=7.0% of combined batch)
+[train  64/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1134 [mem] VmRSS=429.7 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.135672
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0121  anchor mean(bce)*weight=+0.9671  (anchor rows=300/4300=7.0% of combined batch)
+[train  65/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1357 [mem] VmRSS=422.7 MiB sys_avail=2913 MiB
+TRAIN: T=2281 minibatch_size=1140 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.036159
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0842  anchor mean(bce)*weight=+0.8873  (anchor rows=300/2281=13.2% of combined batch)
+[train  66/300] reward=+2.5 checkpoints= 3/66 len=1981 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=-0.0362 [mem] VmRSS=374.4 MiB sys_avail=2967 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.039725
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0176  anchor mean(bce)*weight=+0.4876  (anchor rows=300/4300=7.0% of combined batch)
+[train  67/300] reward=+9.8 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.160 score_r=+0.000 pg_loss=+0.0397 [mem] VmRSS=429.4 MiB sys_avail=2904 MiB
+TRAIN: T=870 minibatch_size=870 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.185001
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0558  anchor mean(bce)*weight=+0.6421  (anchor rows=300/870=34.5% of combined batch)
+[train  68/300] reward=+0.1 checkpoints= 1/66 len= 570 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.1850 [mem] VmRSS=340.4 MiB sys_avail=2998 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.005136
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0203  anchor mean(bce)*weight=+0.4412  (anchor rows=300/4300=7.0% of combined batch)
+[train  69/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.260 score_r=+0.000 pg_loss=+0.0051 [mem] VmRSS=429.7 MiB sys_avail=2900 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.023805
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0242  anchor mean(bce)*weight=+0.8630  (anchor rows=300/4300=7.0% of combined batch)
+[train  70/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0238 [mem] VmRSS=480.9 MiB sys_avail=2847 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.084076
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0245  anchor mean(bce)*weight=+0.5225  (anchor rows=300/4300=7.0% of combined batch)
+[train  71/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=-0.0841 [mem] VmRSS=480.8 MiB sys_avail=2850 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.077792
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0294  anchor mean(bce)*weight=+1.2195  (anchor rows=300/4300=7.0% of combined batch)
+[train  72/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0778 [mem] VmRSS=480.9 MiB sys_avail=2846 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.068374
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0365  anchor mean(bce)*weight=+0.6586  (anchor rows=300/4300=7.0% of combined batch)
+[train  73/300] reward=+13.2 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.150 score_r=+0.000 pg_loss=-0.0684 [mem] VmRSS=422.9 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.058672
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0300  anchor mean(bce)*weight=+0.8289  (anchor rows=300/4300=7.0% of combined batch)
+[train  74/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0587 [mem] VmRSS=422.9 MiB sys_avail=2910 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.000850
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0345  anchor mean(bce)*weight=+0.7302  (anchor rows=300/4300=7.0% of combined batch)
+[train  75/300] reward=+6.8 checkpoints= 7/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0008 [mem] VmRSS=422.9 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.261885
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0559  anchor mean(bce)*weight=+0.5526  (anchor rows=300/4300=7.0% of combined batch)
+[train  76/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=-0.2619 [mem] VmRSS=422.7 MiB sys_avail=2899 MiB
+TRAIN: T=874 minibatch_size=874 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.417114
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0583  anchor mean(bce)*weight=+1.3270  (anchor rows=300/874=34.3% of combined batch)
+[train  77/300] reward=+0.1 checkpoints= 1/66 len= 574 outcome=cp_terminated ring_r=-0.370 score_r=+0.000 pg_loss=+0.4171 [mem] VmRSS=350.4 MiB sys_avail=2970 MiB
+TRAIN: T=1114 minibatch_size=1114 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.115544
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0170  anchor mean(bce)*weight=+0.4751  (anchor rows=300/1114=26.9% of combined batch)
+[train  78/300] reward=+0.5 checkpoints= 1/66 len= 814 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.1155 [mem] VmRSS=340.7 MiB sys_avail=2977 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.081712
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0261  anchor mean(bce)*weight=+0.5707  (anchor rows=300/4300=7.0% of combined batch)
+[train  79/300] reward=+6.2 checkpoints= 6/66 len=4000 outcome=timeout ring_r=+0.170 score_r=+0.000 pg_loss=-0.0817 [mem] VmRSS=423.0 MiB sys_avail=2893 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.125988
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0599  anchor mean(bce)*weight=+1.2209  (anchor rows=300/4300=7.0% of combined batch)
+[train  80/300] reward=+5.6 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.380 score_r=+0.000 pg_loss=-0.1260 [mem] VmRSS=480.8 MiB sys_avail=2835 MiB
+  [health ep80] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.10300000011920929, 0.2160000056028366, 0.953000009059906, 0.054999999701976776, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.17299999296665192, 0.3109999895095825, 0.1509999930858612, 0.14499999582767487, 0.0, 0.0, 0.0] overall_accuracy=0.9593 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=1250 minibatch_size=1250 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.083128
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1032  anchor mean(bce)*weight=+0.6731  (anchor rows=300/1250=24.0% of combined batch)
+[train  81/300] reward=+0.5 checkpoints= 1/66 len= 950 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.0831 [mem] VmRSS=399.5 MiB sys_avail=2929 MiB
+/home/foxo/gateway-vulkan-rl/policy_net.py:54: RuntimeWarning: overflow encountered in exp
+  return 1.0 / (1.0 + np.exp(-x))
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.035710
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0121  anchor mean(bce)*weight=+0.5357  (anchor rows=300/4300=7.0% of combined batch)
+[train  82/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.280 score_r=+0.000 pg_loss=-0.0357 [mem] VmRSS=429.7 MiB sys_avail=2884 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.250374
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0590  anchor mean(bce)*weight=+0.9654  (anchor rows=300/4300=7.0% of combined batch)
+[train  83/300] reward=+4.7 checkpoints= 5/66 len=4000 outcome=timeout ring_r=-0.320 score_r=+0.000 pg_loss=-0.2504 [mem] VmRSS=422.9 MiB sys_avail=2896 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.088102
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0676  anchor mean(bce)*weight=+0.9426  (anchor rows=300/4300=7.0% of combined batch)
+[train  84/300] reward=+3.7 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=-0.0881 [mem] VmRSS=422.7 MiB sys_avail=2892 MiB
+TRAIN: T=642 minibatch_size=642 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.280680
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1136  anchor mean(bce)*weight=+0.7301  (anchor rows=300/642=46.7% of combined batch)
+[train  85/300] reward=+0.1 checkpoints= 1/66 len= 342 outcome=cp_terminated ring_r=-0.360 score_r=+0.000 pg_loss=+0.2807 [mem] VmRSS=395.3 MiB sys_avail=2923 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.045217
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0215  anchor mean(bce)*weight=+0.4249  (anchor rows=300/4300=7.0% of combined batch)
+[train  86/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.280 score_r=+0.000 pg_loss=-0.0452 [mem] VmRSS=422.9 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.456242
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0903  anchor mean(bce)*weight=+0.7164  (anchor rows=300/4300=7.0% of combined batch)
+[train  87/300] reward=+3.6 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.360 score_r=+0.000 pg_loss=-0.4562 [mem] VmRSS=422.9 MiB sys_avail=2891 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.055861
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0081  anchor mean(bce)*weight=+0.8446  (anchor rows=300/4300=7.0% of combined batch)
+[train  88/300] reward=+14.1 checkpoints=14/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=+0.0559 [mem] VmRSS=422.9 MiB sys_avail=2893 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.167291
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0743  anchor mean(bce)*weight=+0.4388  (anchor rows=300/4300=7.0% of combined batch)
+[train  89/300] reward=+9.8 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=-0.1673 [mem] VmRSS=422.9 MiB sys_avail=2899 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029946
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0087  anchor mean(bce)*weight=+0.6969  (anchor rows=300/4300=7.0% of combined batch)
+[train  90/300] reward=+10.9 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.150 score_r=+0.000 pg_loss=+0.0299 [mem] VmRSS=480.9 MiB sys_avail=2835 MiB
+TRAIN: T=742 minibatch_size=742 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.193895
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0511  anchor mean(bce)*weight=+0.5548  (anchor rows=300/742=40.4% of combined batch)
+[train  91/300] reward=+0.1 checkpoints= 1/66 len= 442 outcome=cp_terminated ring_r=-0.380 score_r=+0.000 pg_loss=+0.1939 [mem] VmRSS=340.5 MiB sys_avail=2978 MiB
+TRAIN: T=601 minibatch_size=601 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.212502
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0356  anchor mean(bce)*weight=+0.4615  (anchor rows=300/601=49.9% of combined batch)
+[train  92/300] reward=+0.1 checkpoints= 1/66 len= 301 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.2125 [mem] VmRSS=340.4 MiB sys_avail=2975 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.025956
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0334  anchor mean(bce)*weight=+0.5459  (anchor rows=300/4300=7.0% of combined batch)
+[train  93/300] reward=+10.2 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.160 score_r=+0.000 pg_loss=-0.0260 [mem] VmRSS=429.4 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.173081
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0057  anchor mean(bce)*weight=+0.4640  (anchor rows=300/4300=7.0% of combined batch)
+[train  94/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.080 score_r=+0.000 pg_loss=-0.1731 [mem] VmRSS=422.6 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.336212
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1106  anchor mean(bce)*weight=+0.6241  (anchor rows=300/4300=7.0% of combined batch)
+[train  95/300] reward=+9.6 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.390 score_r=+0.000 pg_loss=-0.3362 [mem] VmRSS=429.5 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.024185
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0020  anchor mean(bce)*weight=+0.4906  (anchor rows=300/4300=7.0% of combined batch)
+[train  96/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=+0.0242 [mem] VmRSS=422.7 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003964
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0008  anchor mean(bce)*weight=+0.5347  (anchor rows=300/4300=7.0% of combined batch)
+[train  97/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.070 score_r=+0.000 pg_loss=-0.0040 [mem] VmRSS=480.7 MiB sys_avail=2822 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.006580
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0290  anchor mean(bce)*weight=+0.4971  (anchor rows=300/4300=7.0% of combined batch)
+[train  98/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.280 score_r=+0.000 pg_loss=+0.0066 [mem] VmRSS=422.7 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.111817
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0337  anchor mean(bce)*weight=+0.5348  (anchor rows=300/4300=7.0% of combined batch)
+[train  99/300] reward=+11.9 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.130 score_r=+0.000 pg_loss=-0.1118 [mem] VmRSS=480.9 MiB sys_avail=2825 MiB
+TRAIN: T=1687 minibatch_size=1687 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.193601
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0162  anchor mean(bce)*weight=+1.1633  (anchor rows=300/1687=17.8% of combined batch)
+[train 100/300] reward=+0.1 checkpoints= 1/66 len=1387 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.1936 [mem] VmRSS=421.7 MiB sys_avail=2919 MiB
+  [defeat-rate bucket] episodes 51-100: boss_defeat_rate=0.000 (0/50) mean_reward=+5.55 mean_checkpoints=5.82
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+  [health ep100] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.00800000037997961, 0.007000000216066837, 0.9369999766349792, 0.36500000953674316, 0.0, 0.0, 0.0] std=[0.0, 0.0010000000474974513, 0.0, 0.04500000178813934, 0.06599999964237213, 0.18700000643730164, 0.3440000116825104, 0.0, 0.0, 0.0] overall_accuracy=0.9605 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.002114
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0496  anchor mean(bce)*weight=+0.6135  (anchor rows=300/4300=7.0% of combined batch)
+[train 101/300] reward=+10.7 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.340 score_r=+0.000 pg_loss=-0.0021 [mem] VmRSS=480.7 MiB sys_avail=2849 MiB
+TRAIN: T=3146 minibatch_size=1573 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.087882
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0194  anchor mean(bce)*weight=+0.4495  (anchor rows=300/3146=9.5% of combined batch)
+[train 102/300] reward=+5.8 checkpoints= 8/66 len=2846 outcome=died ring_r=-0.190 score_r=+0.000 pg_loss=+0.0879 [mem] VmRSS=389.0 MiB sys_avail=2930 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.069288
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0306  anchor mean(bce)*weight=+0.3192  (anchor rows=300/4300=7.0% of combined batch)
+[train 103/300] reward=+9.1 checkpoints= 9/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=+0.0693 [mem] VmRSS=422.8 MiB sys_avail=2906 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028096
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0018  anchor mean(bce)*weight=+0.4210  (anchor rows=300/4300=7.0% of combined batch)
+[train 104/300] reward=+10.7 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.340 score_r=+0.000 pg_loss=+0.0281 [mem] VmRSS=481.1 MiB sys_avail=2851 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029104
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0035  anchor mean(bce)*weight=+0.4187  (anchor rows=300/4300=7.0% of combined batch)
+[train 105/300] reward=+12.9 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.140 score_r=+0.000 pg_loss=+0.0291 [mem] VmRSS=480.9 MiB sys_avail=2846 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.252016
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0505  anchor mean(bce)*weight=+0.4987  (anchor rows=300/4300=7.0% of combined batch)
+[train 106/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.180 score_r=+0.000 pg_loss=-0.2520 [mem] VmRSS=422.9 MiB sys_avail=2899 MiB
+TRAIN: T=3112 minibatch_size=1556 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.088204
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0253  anchor mean(bce)*weight=+0.6829  (anchor rows=300/3112=9.6% of combined batch)
+[train 107/300] reward=+5.6 checkpoints= 8/66 len=2812 outcome=died ring_r=-0.390 score_r=+0.000 pg_loss=+0.0882 [mem] VmRSS=395.3 MiB sys_avail=2926 MiB
+TRAIN: T=3070 minibatch_size=1535 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.005035
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0336  anchor mean(bce)*weight=+0.4116  (anchor rows=300/3070=9.8% of combined batch)
+[train 108/300] reward=+5.6 checkpoints= 8/66 len=2770 outcome=died ring_r=-0.390 score_r=+0.001 pg_loss=+0.0050 [mem] VmRSS=394.6 MiB sys_avail=2936 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.058336
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0199  anchor mean(bce)*weight=+0.5221  (anchor rows=300/4300=7.0% of combined batch)
+[train 109/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.210 score_r=+0.000 pg_loss=+0.0583 [mem] VmRSS=429.6 MiB sys_avail=2894 MiB
+TRAIN: T=3060 minibatch_size=1530 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.047355
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0021  anchor mean(bce)*weight=+0.3931  (anchor rows=300/3060=9.8% of combined batch)
+[train 110/300] reward=+6.2 checkpoints= 8/66 len=2760 outcome=died ring_r=+0.150 score_r=+0.001 pg_loss=+0.0474 [mem] VmRSS=445.6 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.057314
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0226  anchor mean(bce)*weight=+0.4197  (anchor rows=300/4300=7.0% of combined batch)
+[train 111/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.160 score_r=+0.000 pg_loss=+0.0573 [mem] VmRSS=429.8 MiB sys_avail=2901 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.058415
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0166  anchor mean(bce)*weight=+0.4526  (anchor rows=300/4300=7.0% of combined batch)
+[train 112/300] reward=+10.2 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.160 score_r=+0.000 pg_loss=+0.0584 [mem] VmRSS=481.0 MiB sys_avail=2850 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.046943
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0117  anchor mean(bce)*weight=+0.4843  (anchor rows=300/4300=7.0% of combined batch)
+[train 113/300] reward=+9.8 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.180 score_r=+0.000 pg_loss=+0.0469 [mem] VmRSS=423.0 MiB sys_avail=2902 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.054292
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0385  anchor mean(bce)*weight=+0.3628  (anchor rows=300/4300=7.0% of combined batch)
+[train 114/300] reward=+10.8 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0543 [mem] VmRSS=423.0 MiB sys_avail=2901 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.153427
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0843  anchor mean(bce)*weight=+0.9682  (anchor rows=300/4300=7.0% of combined batch)
+[train 115/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.280 score_r=+0.000 pg_loss=-0.1534 [mem] VmRSS=422.9 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.244174
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0243  anchor mean(bce)*weight=+0.5120  (anchor rows=300/4300=7.0% of combined batch)
+[train 116/300] reward=+8.1 checkpoints= 8/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=-0.2442 [mem] VmRSS=429.8 MiB sys_avail=2901 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.049543
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0078  anchor mean(bce)*weight=+0.7797  (anchor rows=300/4300=7.0% of combined batch)
+[train 117/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0495 [mem] VmRSS=423.0 MiB sys_avail=2903 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.029194
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0337  anchor mean(bce)*weight=+0.3823  (anchor rows=300/4300=7.0% of combined batch)
+[train 118/300] reward=+9.8 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.220 score_r=+0.000 pg_loss=-0.0292 [mem] VmRSS=423.0 MiB sys_avail=2908 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.059333
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0162  anchor mean(bce)*weight=+0.6605  (anchor rows=300/4300=7.0% of combined batch)
+[train 119/300] reward=+9.7 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.310 score_r=+0.000 pg_loss=+0.0593 [mem] VmRSS=423.0 MiB sys_avail=2915 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029812
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0122  anchor mean(bce)*weight=+0.6908  (anchor rows=300/4300=7.0% of combined batch)
+[train 120/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.310 score_r=+0.000 pg_loss=+0.0298 [mem] VmRSS=423.0 MiB sys_avail=2915 MiB
+  [health ep120] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.017000000923871994, 0.054999999701976776, 0.6970000267028809, 0.19699999690055847, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.06300000101327896, 0.19599999487400055, 0.34299999475479126, 0.2840000092983246, 0.0, 0.0, 0.0] overall_accuracy=0.9748 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.013112
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0001  anchor mean(bce)*weight=+0.4992  (anchor rows=300/4300=7.0% of combined batch)
+[train 121/300] reward=+10.8 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0131 [mem] VmRSS=422.9 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.085428
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0287  anchor mean(bce)*weight=+0.6524  (anchor rows=300/4300=7.0% of combined batch)
+[train 122/300] reward=+11.9 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.150 score_r=+0.000 pg_loss=-0.0854 [mem] VmRSS=423.0 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.038473
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0192  anchor mean(bce)*weight=+0.5657  (anchor rows=300/4300=7.0% of combined batch)
+[train 123/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.170 score_r=+0.000 pg_loss=+0.0385 [mem] VmRSS=422.8 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.039709
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0004  anchor mean(bce)*weight=+0.7117  (anchor rows=300/4300=7.0% of combined batch)
+[train 124/300] reward=+13.1 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=+0.0397 [mem] VmRSS=423.0 MiB sys_avail=2901 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.050015
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0156  anchor mean(bce)*weight=+0.4166  (anchor rows=300/4300=7.0% of combined batch)
+[train 125/300] reward=+10.1 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=+0.0500 [mem] VmRSS=423.0 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.054954
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0278  anchor mean(bce)*weight=+0.3265  (anchor rows=300/4300=7.0% of combined batch)
+[train 126/300] reward=+13.7 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.310 score_r=+0.000 pg_loss=+0.0550 [mem] VmRSS=429.9 MiB sys_avail=2898 MiB
+TRAIN: T=628 minibatch_size=628 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.142980
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1164  anchor mean(bce)*weight=+0.4265  (anchor rows=300/628=47.8% of combined batch)
+[train 127/300] reward=+0.2 checkpoints= 1/66 len= 328 outcome=cp_terminated ring_r=-0.330 score_r=+0.000 pg_loss=+0.1430 [mem] VmRSS=340.7 MiB sys_avail=2986 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028796
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0077  anchor mean(bce)*weight=+0.4150  (anchor rows=300/4300=7.0% of combined batch)
+[train 128/300] reward=+10.1 checkpoints=10/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=+0.0288 [mem] VmRSS=429.9 MiB sys_avail=2876 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.048742
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0167  anchor mean(bce)*weight=+0.4161  (anchor rows=300/4300=7.0% of combined batch)
+[train 129/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.070 score_r=+0.000 pg_loss=+0.0487 [mem] VmRSS=429.8 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.029738
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0229  anchor mean(bce)*weight=+0.3830  (anchor rows=300/4300=7.0% of combined batch)
+[train 130/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.150 score_r=+0.000 pg_loss=-0.0297 [mem] VmRSS=422.9 MiB sys_avail=2892 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032973
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0074  anchor mean(bce)*weight=+0.7010  (anchor rows=300/4300=7.0% of combined batch)
+[train 131/300] reward=+10.8 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.200 score_r=+0.000 pg_loss=+0.0330 [mem] VmRSS=423.0 MiB sys_avail=2899 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.058134
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0371  anchor mean(bce)*weight=+0.5952  (anchor rows=300/4300=7.0% of combined batch)
+[train 132/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.340 score_r=+0.000 pg_loss=+0.0581 [mem] VmRSS=423.0 MiB sys_avail=2901 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.059402
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0328  anchor mean(bce)*weight=+0.5266  (anchor rows=300/4300=7.0% of combined batch)
+[train 133/300] reward=+11.9 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.130 score_r=+0.000 pg_loss=+0.0594 [mem] VmRSS=422.9 MiB sys_avail=2898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.045960
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0241  anchor mean(bce)*weight=+0.8535  (anchor rows=300/4300=7.0% of combined batch)
+[train 134/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0460 [mem] VmRSS=422.9 MiB sys_avail=2892 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.007960
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0216  anchor mean(bce)*weight=+0.4106  (anchor rows=300/4300=7.0% of combined batch)
+[train 135/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0080 [mem] VmRSS=429.6 MiB sys_avail=2881 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.013058
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0030  anchor mean(bce)*weight=+0.5036  (anchor rows=300/4300=7.0% of combined batch)
+[train 136/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=+0.0131 [mem] VmRSS=429.6 MiB sys_avail=2886 MiB
+TRAIN: T=1291 minibatch_size=1291 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.078636
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0509  anchor mean(bce)*weight=+0.5067  (anchor rows=300/1291=23.2% of combined batch)
+[train 137/300] reward=+0.1 checkpoints= 1/66 len= 991 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.0786 [mem] VmRSS=401.3 MiB sys_avail=2914 MiB
+TRAIN: T=3058 minibatch_size=1529 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.089862
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0431  anchor mean(bce)*weight=+0.4788  (anchor rows=300/3058=9.8% of combined batch)
+[train 138/300] reward=+6.2 checkpoints= 8/66 len=2758 outcome=died ring_r=+0.150 score_r=+0.000 pg_loss=+0.0899 [mem] VmRSS=394.3 MiB sys_avail=2913 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032884
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0089  anchor mean(bce)*weight=+0.3935  (anchor rows=300/4300=7.0% of combined batch)
+[train 139/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.180 score_r=+0.000 pg_loss=+0.0329 [mem] VmRSS=422.7 MiB sys_avail=2887 MiB
+TRAIN: T=4289 minibatch_size=1429 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.021784
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0040  anchor mean(bce)*weight=+0.3731  (anchor rows=300/4289=7.0% of combined batch)
+[train 140/300] reward=+6.6 checkpoints= 9/66 len=3989 outcome=died ring_r=-0.390 score_r=+0.000 pg_loss=+0.0218 [mem] VmRSS=422.5 MiB sys_avail=2895 MiB
+  [health ep140] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.007000000216066837, 0.019999999552965164, 0.8980000019073486, 0.05900000035762787, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.032999999821186066, 0.11699999868869781, 0.23899999260902405, 0.1550000011920929, 0.0, 0.0, 0.0] overall_accuracy=0.9815 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.013456
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0082  anchor mean(bce)*weight=+0.3933  (anchor rows=300/4300=7.0% of combined batch)
+[train 141/300] reward=+13.7 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.320 score_r=+0.000 pg_loss=-0.0135 [mem] VmRSS=429.6 MiB sys_avail=2884 MiB
+TRAIN: T=735 minibatch_size=735 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.129975
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1214  anchor mean(bce)*weight=+0.4942  (anchor rows=300/735=40.8% of combined batch)
+[train 142/300] reward=+0.1 checkpoints= 1/66 len= 435 outcome=cp_terminated ring_r=-0.380 score_r=+0.000 pg_loss=+0.1300 [mem] VmRSS=340.4 MiB sys_avail=2973 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.044302
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0011  anchor mean(bce)*weight=+0.3477  (anchor rows=300/4300=7.0% of combined batch)
+[train 143/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.190 score_r=+0.000 pg_loss=+0.0443 [mem] VmRSS=422.7 MiB sys_avail=2891 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.043647
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0126  anchor mean(bce)*weight=+0.3745  (anchor rows=300/4300=7.0% of combined batch)
+[train 144/300] reward=+12.8 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.250 score_r=+0.000 pg_loss=+0.0436 [mem] VmRSS=429.6 MiB sys_avail=2879 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000420
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0087  anchor mean(bce)*weight=+0.4297  (anchor rows=300/4300=7.0% of combined batch)
+[train 145/300] reward=+13.2 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.190 score_r=+0.000 pg_loss=-0.0004 [mem] VmRSS=429.7 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.307669
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0893  anchor mean(bce)*weight=+0.6301  (anchor rows=300/4300=7.0% of combined batch)
+[train 146/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=-0.3077 [mem] VmRSS=422.7 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.119971
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0312  anchor mean(bce)*weight=+0.8184  (anchor rows=300/4300=7.0% of combined batch)
+[train 147/300] reward=+3.6 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.390 score_r=+0.000 pg_loss=-0.1200 [mem] VmRSS=422.8 MiB sys_avail=2891 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.062641
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0295  anchor mean(bce)*weight=+0.4828  (anchor rows=300/4300=7.0% of combined batch)
+[train 148/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.200 score_r=+0.000 pg_loss=+0.0626 [mem] VmRSS=429.5 MiB sys_avail=2893 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.029276
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0058  anchor mean(bce)*weight=+0.4484  (anchor rows=300/4300=7.0% of combined batch)
+[train 149/300] reward=+7.8 checkpoints= 8/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=+0.0293 [mem] VmRSS=422.9 MiB sys_avail=2893 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.123549
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0384  anchor mean(bce)*weight=+0.5531  (anchor rows=300/4300=7.0% of combined batch)
+[train 150/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1235 [mem] VmRSS=422.9 MiB sys_avail=2895 MiB
+  [defeat-rate bucket] episodes 101-150: boss_defeat_rate=0.000 (0/50) mean_reward=+9.22 mean_checkpoints=9.62
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.065364
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0051  anchor mean(bce)*weight=+0.4154  (anchor rows=300/4300=7.0% of combined batch)
+[train 151/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.180 score_r=+0.000 pg_loss=+0.0654 [mem] VmRSS=429.9 MiB sys_avail=2886 MiB
+TRAIN: T=3716 minibatch_size=1858 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.071396
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0073  anchor mean(bce)*weight=+0.3918  (anchor rows=300/3716=8.1% of combined batch)
+[train 152/300] reward=+6.6 checkpoints= 9/66 len=3416 outcome=died ring_r=-0.390 score_r=+0.000 pg_loss=+0.0714 [mem] VmRSS=402.2 MiB sys_avail=2917 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.019112
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0193  anchor mean(bce)*weight=+0.3310  (anchor rows=300/4300=7.0% of combined batch)
+[train 153/300] reward=+12.8 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=+0.0191 [mem] VmRSS=480.9 MiB sys_avail=2833 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.067724
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0194  anchor mean(bce)*weight=+0.5588  (anchor rows=300/4300=7.0% of combined batch)
+[train 154/300] reward=+10.7 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.320 score_r=+0.000 pg_loss=+0.0677 [mem] VmRSS=429.9 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.012273
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0025  anchor mean(bce)*weight=+0.4485  (anchor rows=300/4300=7.0% of combined batch)
+[train 155/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.260 score_r=+0.000 pg_loss=-0.0123 [mem] VmRSS=481.1 MiB sys_avail=2843 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.070778
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0092  anchor mean(bce)*weight=+1.3513  (anchor rows=300/4300=7.0% of combined batch)
+[train 156/300] reward=+3.7 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=+0.0708 [mem] VmRSS=423.0 MiB sys_avail=2904 MiB
+TRAIN: T=3734 minibatch_size=1867 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.066000
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0009  anchor mean(bce)*weight=+0.5124  (anchor rows=300/3734=8.0% of combined batch)
+[train 157/300] reward=+7.2 checkpoints= 9/66 len=3434 outcome=died ring_r=+0.150 score_r=+0.000 pg_loss=+0.0660 [mem] VmRSS=403.0 MiB sys_avail=2920 MiB
+TRAIN: T=3754 minibatch_size=1877 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.022806
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0554  anchor mean(bce)*weight=+0.3232  (anchor rows=300/3754=8.0% of combined batch)
+[train 158/300] reward=+6.1 checkpoints= 8/66 len=3454 outcome=died ring_r=+0.120 score_r=+0.000 pg_loss=-0.0228 [mem] VmRSS=403.9 MiB sys_avail=2921 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.044757
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0330  anchor mean(bce)*weight=+0.5440  (anchor rows=300/4300=7.0% of combined batch)
+[train 159/300] reward=+8.6 checkpoints= 9/66 len=4000 outcome=timeout ring_r=-0.380 score_r=+0.000 pg_loss=-0.0448 [mem] VmRSS=423.0 MiB sys_avail=2898 MiB
+TRAIN: T=3486 minibatch_size=1743 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.086267
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1327  anchor mean(bce)*weight=+1.1689  (anchor rows=300/3486=8.6% of combined batch)
+[train 160/300] reward=+5.6 checkpoints= 8/66 len=3186 outcome=died ring_r=-0.360 score_r=+0.000 pg_loss=-0.0863 [mem] VmRSS=395.1 MiB sys_avail=2930 MiB
+  [health ep160] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.23000000417232513, 0.09300000220537186, 0.7269999980926514, 0.04500000178813934, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.23999999463558197, 0.22599999606609344, 0.32199999690055847, 0.12800000607967377, 0.0, 0.0, 0.0] overall_accuracy=0.9596 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.279738
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0523  anchor mean(bce)*weight=+0.4866  (anchor rows=300/4300=7.0% of combined batch)
+[train 161/300] reward=+7.7 checkpoints= 8/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=-0.2797 [mem] VmRSS=422.9 MiB sys_avail=2895 MiB
+TRAIN: T=1337 minibatch_size=1337 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.370875
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0257  anchor mean(bce)*weight=+1.5631  (anchor rows=300/1337=22.4% of combined batch)
+[train 162/300] reward=+2.7 checkpoints= 5/66 len=1037 outcome=hazard ring_r=-0.330 score_r=+0.000 pg_loss=+0.3709 [mem] VmRSS=403.8 MiB sys_avail=2919 MiB
+TRAIN: T=3213 minibatch_size=1606 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032782
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0266  anchor mean(bce)*weight=+0.4240  (anchor rows=300/3213=9.3% of combined batch)
+[train 163/300] reward=+6.1 checkpoints= 8/66 len=2913 outcome=died ring_r=+0.110 score_r=+0.000 pg_loss=+0.0328 [mem] VmRSS=390.3 MiB sys_avail=2926 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.075659
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0442  anchor mean(bce)*weight=+0.4645  (anchor rows=300/4300=7.0% of combined batch)
+[train 164/300] reward=+12.7 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.270 score_r=+0.000 pg_loss=-0.0757 [mem] VmRSS=429.8 MiB sys_avail=2884 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.008056
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0115  anchor mean(bce)*weight=+1.0916  (anchor rows=300/4300=7.0% of combined batch)
+[train 165/300] reward=+3.0 checkpoints= 3/66 len=4000 outcome=timeout ring_r=+0.030 score_r=+0.000 pg_loss=-0.0081 [mem] VmRSS=481.0 MiB sys_avail=2829 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.078717
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0639  anchor mean(bce)*weight=+0.5271  (anchor rows=300/4300=7.0% of combined batch)
+[train 166/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.160 score_r=+0.000 pg_loss=-0.0787 [mem] VmRSS=422.9 MiB sys_avail=2900 MiB
+TRAIN: T=604 minibatch_size=604 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.462444
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0766  anchor mean(bce)*weight=+0.8533  (anchor rows=300/604=49.7% of combined batch)
+[train 167/300] reward=+0.5 checkpoints= 1/66 len= 304 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.4624 [mem] VmRSS=392.0 MiB sys_avail=2929 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.060459
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0008  anchor mean(bce)*weight=+0.5848  (anchor rows=300/4300=7.0% of combined batch)
+[train 168/300] reward=+12.8 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.170 score_r=+0.000 pg_loss=+0.0605 [mem] VmRSS=423.0 MiB sys_avail=2894 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.006623
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0392  anchor mean(bce)*weight=+0.4871  (anchor rows=300/4300=7.0% of combined batch)
+[train 169/300] reward=+13.1 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=-0.0066 [mem] VmRSS=429.9 MiB sys_avail=2884 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.022353
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0097  anchor mean(bce)*weight=+0.7097  (anchor rows=300/4300=7.0% of combined batch)
+[train 170/300] reward=+10.7 checkpoints=11/66 len=4000 outcome=timeout ring_r=-0.280 score_r=+0.000 pg_loss=-0.0224 [mem] VmRSS=422.7 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.065134
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0216  anchor mean(bce)*weight=+0.5398  (anchor rows=300/4300=7.0% of combined batch)
+[train 171/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.190 score_r=+0.000 pg_loss=+0.0651 [mem] VmRSS=422.9 MiB sys_avail=2888 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.003440
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0029  anchor mean(bce)*weight=+0.4231  (anchor rows=300/4300=7.0% of combined batch)
+[train 172/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0034 [mem] VmRSS=429.7 MiB sys_avail=2884 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.301043
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0663  anchor mean(bce)*weight=+0.4861  (anchor rows=300/4300=7.0% of combined batch)
+[train 173/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.090 score_r=+0.000 pg_loss=-0.3010 [mem] VmRSS=429.8 MiB sys_avail=2882 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.047452
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0095  anchor mean(bce)*weight=+0.8606  (anchor rows=300/4300=7.0% of combined batch)
+[train 174/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0475 [mem] VmRSS=423.0 MiB sys_avail=2894 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.025463
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0067  anchor mean(bce)*weight=+0.4935  (anchor rows=300/4300=7.0% of combined batch)
+[train 175/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.150 score_r=+0.000 pg_loss=+0.0255 [mem] VmRSS=429.9 MiB sys_avail=2888 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.067010
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0323  anchor mean(bce)*weight=+0.5072  (anchor rows=300/4300=7.0% of combined batch)
+[train 176/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.170 score_r=+0.000 pg_loss=-0.0670 [mem] VmRSS=429.9 MiB sys_avail=2882 MiB
+TRAIN: T=1298 minibatch_size=1298 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.087812
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1164  anchor mean(bce)*weight=+0.7675  (anchor rows=300/1298=23.1% of combined batch)
+[train 177/300] reward=+0.1 checkpoints= 1/66 len= 998 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.0878 [mem] VmRSS=401.8 MiB sys_avail=2914 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.031723
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0065  anchor mean(bce)*weight=+0.3621  (anchor rows=300/4300=7.0% of combined batch)
+[train 178/300] reward=+12.9 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.150 score_r=+0.000 pg_loss=+0.0317 [mem] VmRSS=429.9 MiB sys_avail=2874 MiB
+TRAIN: T=1374 minibatch_size=1374 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.107377
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0315  anchor mean(bce)*weight=+0.6045  (anchor rows=300/1374=21.8% of combined batch)
+[train 179/300] reward=+0.1 checkpoints= 1/66 len=1074 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.1074 [mem] VmRSS=405.8 MiB sys_avail=2899 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.023882
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0280  anchor mean(bce)*weight=+0.3993  (anchor rows=300/4300=7.0% of combined batch)
+[train 180/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=-0.0239 [mem] VmRSS=429.9 MiB sys_avail=2884 MiB
+  [health ep180] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0010000000474974513, 0.0, 0.027000000700354576, 0.05299999937415123, 0.8080000281333923, 0.13699999451637268, 0.0, 0.0, 0.0] std=[0.0, 0.003000000026077032, 0.0, 0.07100000232458115, 0.19200000166893005, 0.30399999022483826, 0.22200000286102295, 0.0, 0.0, 0.0] overall_accuracy=0.9843 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.456256
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0309  anchor mean(bce)*weight=+0.6113  (anchor rows=300/4300=7.0% of combined batch)
+[train 181/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.310 score_r=+0.000 pg_loss=-0.4563 [mem] VmRSS=429.8 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001118
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0273  anchor mean(bce)*weight=+0.5139  (anchor rows=300/4300=7.0% of combined batch)
+[train 182/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.160 score_r=+0.000 pg_loss=-0.0011 [mem] VmRSS=429.9 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035961
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0062  anchor mean(bce)*weight=+0.4458  (anchor rows=300/4300=7.0% of combined batch)
+[train 183/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.330 score_r=+0.000 pg_loss=+0.0360 [mem] VmRSS=429.7 MiB sys_avail=2879 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.139524
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0207  anchor mean(bce)*weight=+0.6331  (anchor rows=300/4300=7.0% of combined batch)
+[train 184/300] reward=+15.9 checkpoints=16/66 len=4000 outcome=timeout ring_r=-0.130 score_r=+0.000 pg_loss=-0.1395 [mem] VmRSS=422.8 MiB sys_avail=2883 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.116940
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0421  anchor mean(bce)*weight=+0.8735  (anchor rows=300/4300=7.0% of combined batch)
+[train 185/300] reward=+4.0 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.040 score_r=+0.000 pg_loss=+0.1169 [mem] VmRSS=429.6 MiB sys_avail=2887 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.039522
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0062  anchor mean(bce)*weight=+0.5451  (anchor rows=300/4300=7.0% of combined batch)
+[train 186/300] reward=+8.1 checkpoints= 8/66 len=4000 outcome=timeout ring_r=+0.080 score_r=+0.000 pg_loss=+0.0395 [mem] VmRSS=429.7 MiB sys_avail=2876 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.017043
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0147  anchor mean(bce)*weight=+0.4033  (anchor rows=300/4300=7.0% of combined batch)
+[train 187/300] reward=+9.7 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.260 score_r=+0.000 pg_loss=+0.0170 [mem] VmRSS=429.7 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.000299
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0225  anchor mean(bce)*weight=+0.6190  (anchor rows=300/4300=7.0% of combined batch)
+[train 188/300] reward=+13.1 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=+0.0003 [mem] VmRSS=423.1 MiB sys_avail=2891 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.030558
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0018  anchor mean(bce)*weight=+0.6208  (anchor rows=300/4300=7.0% of combined batch)
+[train 189/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.200 score_r=+0.000 pg_loss=+0.0306 [mem] VmRSS=429.9 MiB sys_avail=2882 MiB
+TRAIN: T=738 minibatch_size=738 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.178392
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1033  anchor mean(bce)*weight=+0.5892  (anchor rows=300/738=40.7% of combined batch)
+[train 190/300] reward=+0.2 checkpoints= 1/66 len= 438 outcome=cp_terminated ring_r=-0.350 score_r=+0.000 pg_loss=+0.1784 [mem] VmRSS=403.4 MiB sys_avail=2910 MiB
+TRAIN: T=3050 minibatch_size=1525 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.079570
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0332  anchor mean(bce)*weight=+0.3597  (anchor rows=300/3050=9.8% of combined batch)
+[train 191/300] reward=+5.6 checkpoints= 8/66 len=2750 outcome=died ring_r=-0.390 score_r=+0.000 pg_loss=+0.0796 [mem] VmRSS=387.4 MiB sys_avail=2925 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.038730
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0148  anchor mean(bce)*weight=+0.3789  (anchor rows=300/4300=7.0% of combined batch)
+[train 192/300] reward=+14.2 checkpoints=14/66 len=4000 outcome=timeout ring_r=+0.200 score_r=+0.000 pg_loss=+0.0387 [mem] VmRSS=429.7 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032175
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0072  anchor mean(bce)*weight=+0.6280  (anchor rows=300/4300=7.0% of combined batch)
+[train 193/300] reward=+15.2 checkpoints=15/66 len=4000 outcome=timeout ring_r=+0.180 score_r=+0.000 pg_loss=+0.0322 [mem] VmRSS=422.8 MiB sys_avail=2888 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.070581
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0391  anchor mean(bce)*weight=+0.3901  (anchor rows=300/4300=7.0% of combined batch)
+[train 194/300] reward=+16.2 checkpoints=16/66 len=4000 outcome=timeout ring_r=+0.190 score_r=+0.000 pg_loss=+0.0706 [mem] VmRSS=423.0 MiB sys_avail=2898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.033529
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0022  anchor mean(bce)*weight=+0.4371  (anchor rows=300/4300=7.0% of combined batch)
+[train 195/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.190 score_r=+0.000 pg_loss=+0.0335 [mem] VmRSS=429.6 MiB sys_avail=2881 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.038634
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0120  anchor mean(bce)*weight=+0.4789  (anchor rows=300/4300=7.0% of combined batch)
+[train 196/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.340 score_r=+0.000 pg_loss=+0.0386 [mem] VmRSS=429.9 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.074779
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0436  anchor mean(bce)*weight=+0.3763  (anchor rows=300/4300=7.0% of combined batch)
+[train 197/300] reward=+15.2 checkpoints=15/66 len=4000 outcome=timeout ring_r=+0.210 score_r=+0.000 pg_loss=+0.0748 [mem] VmRSS=429.6 MiB sys_avail=2884 MiB
+TRAIN: T=731 minibatch_size=731 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.137533
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0573  anchor mean(bce)*weight=+0.4175  (anchor rows=300/731=41.0% of combined batch)
+[train 198/300] reward=+0.2 checkpoints= 1/66 len= 431 outcome=cp_terminated ring_r=-0.350 score_r=+0.000 pg_loss=+0.1375 [mem] VmRSS=402.9 MiB sys_avail=2914 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.006871
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0094  anchor mean(bce)*weight=+0.3913  (anchor rows=300/4300=7.0% of combined batch)
+[train 199/300] reward=+13.7 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.270 score_r=+0.000 pg_loss=+0.0069 [mem] VmRSS=429.8 MiB sys_avail=2874 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.063916
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0136  anchor mean(bce)*weight=+0.6488  (anchor rows=300/4300=7.0% of combined batch)
+[train 200/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0639 [mem] VmRSS=429.8 MiB sys_avail=2874 MiB
+  [defeat-rate bucket] episodes 151-200: boss_defeat_rate=0.000 (0/50) mean_reward=+8.70 mean_checkpoints=9.14
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+  [health ep200] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.010999999940395355, 0.029999999329447746, 0.9269999861717224, 0.052000001072883606, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.04800000041723251, 0.15700000524520874, 0.2029999941587448, 0.14399999380111694, 0.0, 0.0, 0.0] overall_accuracy=0.9797 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.033256
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0030  anchor mean(bce)*weight=+0.3885  (anchor rows=300/4300=7.0% of combined batch)
+[train 201/300] reward=+12.9 checkpoints=13/66 len=4000 outcome=timeout ring_r=-0.130 score_r=+0.000 pg_loss=+0.0333 [mem] VmRSS=423.0 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.094810
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0474  anchor mean(bce)*weight=+0.3801  (anchor rows=300/4300=7.0% of combined batch)
+[train 202/300] reward=+14.7 checkpoints=15/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=-0.0948 [mem] VmRSS=423.1 MiB sys_avail=2896 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.368024
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0532  anchor mean(bce)*weight=+0.5596  (anchor rows=300/4300=7.0% of combined batch)
+[train 203/300] reward=+5.7 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.340 score_r=+0.000 pg_loss=-0.3680 [mem] VmRSS=422.8 MiB sys_avail=2898 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.024379
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0140  anchor mean(bce)*weight=+0.3976  (anchor rows=300/4300=7.0% of combined batch)
+[train 204/300] reward=+11.9 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.130 score_r=+0.000 pg_loss=+0.0244 [mem] VmRSS=429.8 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.082926
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0278  anchor mean(bce)*weight=+0.5010  (anchor rows=300/4300=7.0% of combined batch)
+[train 205/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=+0.0829 [mem] VmRSS=423.0 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.025473
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0263  anchor mean(bce)*weight=+0.4575  (anchor rows=300/4300=7.0% of combined batch)
+[train 206/300] reward=+7.2 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.170 score_r=+0.000 pg_loss=-0.0255 [mem] VmRSS=429.8 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.041798
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0264  anchor mean(bce)*weight=+0.4172  (anchor rows=300/4300=7.0% of combined batch)
+[train 207/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=+0.0418 [mem] VmRSS=422.9 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.087984
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0249  anchor mean(bce)*weight=+0.5474  (anchor rows=300/4300=7.0% of combined batch)
+[train 208/300] reward=+13.7 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=-0.0880 [mem] VmRSS=481.1 MiB sys_avail=2826 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.082727
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0122  anchor mean(bce)*weight=+1.3978  (anchor rows=300/4300=7.0% of combined batch)
+[train 209/300] reward=+3.7 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.290 score_r=+0.000 pg_loss=+0.0827 [mem] VmRSS=422.9 MiB sys_avail=2886 MiB
+TRAIN: T=595 minibatch_size=595 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.177203
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0771  anchor mean(bce)*weight=+0.4273  (anchor rows=300/595=50.4% of combined batch)
+[train 210/300] reward=+0.1 checkpoints= 1/66 len= 295 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.1772 [mem] VmRSS=391.3 MiB sys_avail=2920 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.040951
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0431  anchor mean(bce)*weight=+0.3851  (anchor rows=300/4300=7.0% of combined batch)
+[train 211/300] reward=+11.8 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.230 score_r=+0.000 pg_loss=-0.0410 [mem] VmRSS=429.7 MiB sys_avail=2872 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.055168
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0174  anchor mean(bce)*weight=+0.4571  (anchor rows=300/4300=7.0% of combined batch)
+[train 212/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=+0.0552 [mem] VmRSS=423.1 MiB sys_avail=2877 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.041186
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0092  anchor mean(bce)*weight=+0.4355  (anchor rows=300/4300=7.0% of combined batch)
+[train 213/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0412 [mem] VmRSS=423.0 MiB sys_avail=2883 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035007
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0055  anchor mean(bce)*weight=+0.3605  (anchor rows=300/4300=7.0% of combined batch)
+[train 214/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0350 [mem] VmRSS=423.1 MiB sys_avail=2876 MiB
+TRAIN: T=624 minibatch_size=624 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.165456
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0489  anchor mean(bce)*weight=+0.3970  (anchor rows=300/624=48.1% of combined batch)
+[train 215/300] reward=+0.1 checkpoints= 1/66 len= 324 outcome=cp_terminated ring_r=-0.370 score_r=+0.000 pg_loss=+0.1655 [mem] VmRSS=393.7 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032329
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0042  anchor mean(bce)*weight=+0.3839  (anchor rows=300/4300=7.0% of combined batch)
+[train 216/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0323 [mem] VmRSS=429.7 MiB sys_avail=2869 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035406
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0054  anchor mean(bce)*weight=+0.4037  (anchor rows=300/4300=7.0% of combined batch)
+[train 217/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0354 [mem] VmRSS=430.0 MiB sys_avail=2865 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036996
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0058  anchor mean(bce)*weight=+0.4209  (anchor rows=300/4300=7.0% of combined batch)
+[train 218/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0370 [mem] VmRSS=429.7 MiB sys_avail=2862 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.003954
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0089  anchor mean(bce)*weight=+0.3641  (anchor rows=300/4300=7.0% of combined batch)
+[train 219/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0040 [mem] VmRSS=429.8 MiB sys_avail=2863 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032472
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0038  anchor mean(bce)*weight=+0.4101  (anchor rows=300/4300=7.0% of combined batch)
+[train 220/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0325 [mem] VmRSS=422.9 MiB sys_avail=2882 MiB
+  [health ep220] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.0010000000474974513, 0.029999999329447746, 0.9010000228881836, 0.1289999932050705, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.00800000037997961, 0.15700000524520874, 0.24500000476837158, 0.23899999260902405, 0.0, 0.0, 0.0] overall_accuracy=0.9844 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036819
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0053  anchor mean(bce)*weight=+0.4489  (anchor rows=300/4300=7.0% of combined batch)
+[train 221/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0368 [mem] VmRSS=429.8 MiB sys_avail=2881 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.016229
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0118  anchor mean(bce)*weight=+0.3207  (anchor rows=300/4300=7.0% of combined batch)
+[train 222/300] reward=+13.1 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=-0.0162 [mem] VmRSS=429.8 MiB sys_avail=2878 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.092161
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0245  anchor mean(bce)*weight=+0.9686  (anchor rows=300/4300=7.0% of combined batch)
+[train 223/300] reward=+3.8 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.230 score_r=+0.000 pg_loss=+0.0922 [mem] VmRSS=422.8 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.020492
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0016  anchor mean(bce)*weight=+0.4343  (anchor rows=300/4300=7.0% of combined batch)
+[train 224/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.060 score_r=+0.000 pg_loss=+0.0205 [mem] VmRSS=422.6 MiB sys_avail=2892 MiB
+TRAIN: T=2680 minibatch_size=1340 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.040727
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0160  anchor mean(bce)*weight=+0.3280  (anchor rows=300/2680=11.2% of combined batch)
+[train 225/300] reward=+5.6 checkpoints= 8/66 len=2380 outcome=died ring_r=-0.390 score_r=+0.000 pg_loss=+0.0407 [mem] VmRSS=388.0 MiB sys_avail=2963 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028700
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0041  anchor mean(bce)*weight=+0.3070  (anchor rows=300/4300=7.0% of combined batch)
+[train 226/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0287 [mem] VmRSS=429.8 MiB sys_avail=2902 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028102
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0003  anchor mean(bce)*weight=+0.4592  (anchor rows=300/4300=7.0% of combined batch)
+[train 227/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0281 [mem] VmRSS=429.8 MiB sys_avail=2905 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.034100
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0047  anchor mean(bce)*weight=+0.5138  (anchor rows=300/4300=7.0% of combined batch)
+[train 228/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0341 [mem] VmRSS=422.9 MiB sys_avail=2908 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.043074
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0386  anchor mean(bce)*weight=+0.4466  (anchor rows=300/4300=7.0% of combined batch)
+[train 229/300] reward=+13.7 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.310 score_r=+0.000 pg_loss=-0.0431 [mem] VmRSS=422.8 MiB sys_avail=2916 MiB
+TRAIN: T=1633 minibatch_size=1633 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.230718
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0499  anchor mean(bce)*weight=+1.4782  (anchor rows=300/1633=18.4% of combined batch)
+[train 230/300] reward=+0.1 checkpoints= 1/66 len=1333 outcome=cp_terminated ring_r=-0.390 score_r=+0.000 pg_loss=+0.2307 [mem] VmRSS=419.0 MiB sys_avail=2884 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.054687
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0217  anchor mean(bce)*weight=+0.5049  (anchor rows=300/4300=7.0% of combined batch)
+[train 231/300] reward=+4.1 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.060 score_r=+0.000 pg_loss=+0.0547 [mem] VmRSS=429.6 MiB sys_avail=2871 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028065
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0033  anchor mean(bce)*weight=+0.3552  (anchor rows=300/4300=7.0% of combined batch)
+[train 232/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0281 [mem] VmRSS=423.1 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.040126
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0045  anchor mean(bce)*weight=+0.4469  (anchor rows=300/4300=7.0% of combined batch)
+[train 233/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0401 [mem] VmRSS=429.8 MiB sys_avail=2878 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.027521
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0022  anchor mean(bce)*weight=+0.3183  (anchor rows=300/4300=7.0% of combined batch)
+[train 234/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0275 [mem] VmRSS=480.7 MiB sys_avail=2821 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.023518
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0032  anchor mean(bce)*weight=+0.3493  (anchor rows=300/4300=7.0% of combined batch)
+[train 235/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0235 [mem] VmRSS=423.1 MiB sys_avail=2883 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.063692
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0353  anchor mean(bce)*weight=+0.3880  (anchor rows=300/4300=7.0% of combined batch)
+[train 236/300] reward=+9.8 checkpoints=10/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=+0.0637 [mem] VmRSS=423.1 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.041726
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0220  anchor mean(bce)*weight=+0.3546  (anchor rows=300/4300=7.0% of combined batch)
+[train 237/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.180 score_r=+0.000 pg_loss=-0.0417 [mem] VmRSS=423.0 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.075022
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0312  anchor mean(bce)*weight=+0.7095  (anchor rows=300/4300=7.0% of combined batch)
+[train 238/300] reward=+4.0 checkpoints= 4/66 len=4000 outcome=timeout ring_r=+0.040 score_r=+0.000 pg_loss=+0.0750 [mem] VmRSS=422.9 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036767
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0132  anchor mean(bce)*weight=+0.4162  (anchor rows=300/4300=7.0% of combined batch)
+[train 239/300] reward=+3.7 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.320 score_r=+0.000 pg_loss=+0.0368 [mem] VmRSS=480.9 MiB sys_avail=2822 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.095039
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0275  anchor mean(bce)*weight=+0.4140  (anchor rows=300/4300=7.0% of combined batch)
+[train 240/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.0950 [mem] VmRSS=480.9 MiB sys_avail=2825 MiB
+  [health ep240] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.003000000026077032, 0.03999999910593033, 0.878000020980835, 0.0729999989271164, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.017000000923871994, 0.1770000010728836, 0.26499998569488525, 0.17100000381469727, 0.0, 0.0, 0.0] overall_accuracy=0.9846 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=1491 minibatch_size=1491 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.116207
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0327  anchor mean(bce)*weight=+0.7077  (anchor rows=300/1491=20.1% of combined batch)
+[train 241/300] reward=+0.5 checkpoints= 1/66 len=1191 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.1162 [mem] VmRSS=419.1 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.030035
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0090  anchor mean(bce)*weight=+0.3091  (anchor rows=300/4300=7.0% of combined batch)
+[train 242/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=+0.0300 [mem] VmRSS=480.8 MiB sys_avail=2821 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.065370
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0175  anchor mean(bce)*weight=+0.7002  (anchor rows=300/4300=7.0% of combined batch)
+[train 243/300] reward=+3.6 checkpoints= 4/66 len=4000 outcome=timeout ring_r=-0.390 score_r=+0.000 pg_loss=+0.0654 [mem] VmRSS=429.6 MiB sys_avail=2872 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.027297
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0017  anchor mean(bce)*weight=+0.3531  (anchor rows=300/4300=7.0% of combined batch)
+[train 244/300] reward=+13.8 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.240 score_r=+0.000 pg_loss=+0.0273 [mem] VmRSS=422.9 MiB sys_avail=2880 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.020366
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0011  anchor mean(bce)*weight=+0.3253  (anchor rows=300/4300=7.0% of combined batch)
+[train 245/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.160 score_r=+0.000 pg_loss=+0.0204 [mem] VmRSS=422.9 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.043139
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0319  anchor mean(bce)*weight=+0.3858  (anchor rows=300/4300=7.0% of combined batch)
+[train 246/300] reward=+13.1 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=-0.0431 [mem] VmRSS=430.0 MiB sys_avail=2876 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.083619
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0387  anchor mean(bce)*weight=+0.5000  (anchor rows=300/4300=7.0% of combined batch)
+[train 247/300] reward=+5.6 checkpoints= 6/66 len=4000 outcome=timeout ring_r=-0.380 score_r=+0.000 pg_loss=+0.0836 [mem] VmRSS=422.8 MiB sys_avail=2883 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.091164
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0546  anchor mean(bce)*weight=+0.2797  (anchor rows=300/4300=7.0% of combined batch)
+[train 248/300] reward=+13.8 checkpoints=14/66 len=4000 outcome=timeout ring_r=-0.200 score_r=+0.000 pg_loss=-0.0912 [mem] VmRSS=429.8 MiB sys_avail=2883 MiB
+TRAIN: T=3041 minibatch_size=1520 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.091007
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0236  anchor mean(bce)*weight=+0.7416  (anchor rows=300/3041=9.9% of combined batch)
+[train 249/300] reward=+6.1 checkpoints= 8/66 len=2741 outcome=died ring_r=+0.110 score_r=+0.000 pg_loss=+0.0910 [mem] VmRSS=387.4 MiB sys_avail=2984 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.005706
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0271  anchor mean(bce)*weight=+0.3971  (anchor rows=300/4300=7.0% of combined batch)
+[train 250/300] reward=+12.2 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.210 score_r=+0.000 pg_loss=-0.0057 [mem] VmRSS=480.8 MiB sys_avail=2861 MiB
+  [defeat-rate bucket] episodes 201-250: boss_defeat_rate=0.000 (0/50) mean_reward=+6.00 mean_checkpoints=6.20
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.003594
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0249  anchor mean(bce)*weight=+0.3479  (anchor rows=300/4300=7.0% of combined batch)
+[train 251/300] reward=+14.1 checkpoints=14/66 len=4000 outcome=timeout ring_r=+0.120 score_r=+0.000 pg_loss=-0.0036 [mem] VmRSS=423.0 MiB sys_avail=2923 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.005285
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0331  anchor mean(bce)*weight=+0.4445  (anchor rows=300/4300=7.0% of combined batch)
+[train 252/300] reward=+11.9 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.120 score_r=+0.000 pg_loss=+0.0053 [mem] VmRSS=429.6 MiB sys_avail=2910 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.033397
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0170  anchor mean(bce)*weight=+0.2925  (anchor rows=300/4300=7.0% of combined batch)
+[train 253/300] reward=+15.2 checkpoints=15/66 len=4000 outcome=timeout ring_r=+0.190 score_r=+0.000 pg_loss=+0.0334 [mem] VmRSS=429.7 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.037903
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0060  anchor mean(bce)*weight=+0.3991  (anchor rows=300/4300=7.0% of combined batch)
+[train 254/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0379 [mem] VmRSS=429.7 MiB sys_avail=2905 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.003650
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0188  anchor mean(bce)*weight=+0.3166  (anchor rows=300/4300=7.0% of combined batch)
+[train 255/300] reward=+14.2 checkpoints=14/66 len=4000 outcome=timeout ring_r=+0.160 score_r=+0.000 pg_loss=+0.0037 [mem] VmRSS=429.7 MiB sys_avail=2904 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.047789
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0007  anchor mean(bce)*weight=+0.5425  (anchor rows=300/4300=7.0% of combined batch)
+[train 256/300] reward=+11.1 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.130 score_r=+0.000 pg_loss=-0.0478 [mem] VmRSS=423.0 MiB sys_avail=2911 MiB
+TRAIN: T=3826 minibatch_size=1913 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.011856
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0462  anchor mean(bce)*weight=+0.6920  (anchor rows=300/3826=7.8% of combined batch)
+[train 257/300] reward=+8.1 checkpoints=10/66 len=3526 outcome=died ring_r=+0.080 score_r=+0.000 pg_loss=+0.0119 [mem] VmRSS=406.4 MiB sys_avail=2927 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.024626
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0055  anchor mean(bce)*weight=+0.4456  (anchor rows=300/4300=7.0% of combined batch)
+[train 258/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0246 [mem] VmRSS=429.9 MiB sys_avail=2902 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.031966
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0022  anchor mean(bce)*weight=+0.4400  (anchor rows=300/4300=7.0% of combined batch)
+[train 259/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0320 [mem] VmRSS=429.9 MiB sys_avail=2912 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.027491
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0019  anchor mean(bce)*weight=+0.3939  (anchor rows=300/4300=7.0% of combined batch)
+[train 260/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0275 [mem] VmRSS=429.8 MiB sys_avail=2909 MiB
+  [health ep260] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.006000000052154064, 0.03700000047683716, 0.8690000176429749, 0.164000004529953, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.04399999976158142, 0.17599999904632568, 0.2800000011920929, 0.2669999897480011, 0.0, 0.0, 0.0] overall_accuracy=0.9863 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022635
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0007  anchor mean(bce)*weight=+0.3341  (anchor rows=300/4300=7.0% of combined batch)
+[train 261/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0226 [mem] VmRSS=422.9 MiB sys_avail=2918 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.000114
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0234  anchor mean(bce)*weight=+0.3593  (anchor rows=300/4300=7.0% of combined batch)
+[train 262/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.160 score_r=+0.000 pg_loss=-0.0001 [mem] VmRSS=422.9 MiB sys_avail=2914 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.038213
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0117  anchor mean(bce)*weight=+0.4921  (anchor rows=300/4300=7.0% of combined batch)
+[train 263/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0382 [mem] VmRSS=423.0 MiB sys_avail=2911 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.039782
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0113  anchor mean(bce)*weight=+0.3634  (anchor rows=300/4300=7.0% of combined batch)
+[train 264/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0398 [mem] VmRSS=422.9 MiB sys_avail=2911 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.039729
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0054  anchor mean(bce)*weight=+0.4922  (anchor rows=300/4300=7.0% of combined batch)
+[train 265/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0397 [mem] VmRSS=423.2 MiB sys_avail=2908 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.004247
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0273  anchor mean(bce)*weight=+0.3490  (anchor rows=300/4300=7.0% of combined batch)
+[train 266/300] reward=+13.2 checkpoints=13/66 len=4000 outcome=timeout ring_r=+0.220 score_r=+0.000 pg_loss=+0.0042 [mem] VmRSS=429.8 MiB sys_avail=2902 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035457
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0034  anchor mean(bce)*weight=+0.4583  (anchor rows=300/4300=7.0% of combined batch)
+[train 267/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0355 [mem] VmRSS=429.9 MiB sys_avail=2900 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.040775
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0110  anchor mean(bce)*weight=+0.3252  (anchor rows=300/4300=7.0% of combined batch)
+[train 268/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0408 [mem] VmRSS=430.0 MiB sys_avail=2893 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.047243
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0099  anchor mean(bce)*weight=+0.5011  (anchor rows=300/4300=7.0% of combined batch)
+[train 269/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0472 [mem] VmRSS=423.1 MiB sys_avail=2908 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036435
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0101  anchor mean(bce)*weight=+0.4510  (anchor rows=300/4300=7.0% of combined batch)
+[train 270/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0364 [mem] VmRSS=480.8 MiB sys_avail=2851 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035420
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0044  anchor mean(bce)*weight=+0.3937  (anchor rows=300/4300=7.0% of combined batch)
+[train 271/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0354 [mem] VmRSS=423.1 MiB sys_avail=2904 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.025454
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0035  anchor mean(bce)*weight=+0.2732  (anchor rows=300/4300=7.0% of combined batch)
+[train 272/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0255 [mem] VmRSS=481.0 MiB sys_avail=2851 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.111485
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0022  anchor mean(bce)*weight=+0.3042  (anchor rows=300/4300=7.0% of combined batch)
+[train 273/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1115 [mem] VmRSS=480.9 MiB sys_avail=2852 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.003251
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0047  anchor mean(bce)*weight=+0.3587  (anchor rows=300/4300=7.0% of combined batch)
+[train 274/300] reward=+12.1 checkpoints=12/66 len=4000 outcome=timeout ring_r=+0.140 score_r=+0.000 pg_loss=+0.0033 [mem] VmRSS=423.0 MiB sys_avail=2910 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.131360
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0017  anchor mean(bce)*weight=+0.2719  (anchor rows=300/4300=7.0% of combined batch)
+[train 275/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=-0.1314 [mem] VmRSS=422.8 MiB sys_avail=2907 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022121
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0010  anchor mean(bce)*weight=+0.4013  (anchor rows=300/4300=7.0% of combined batch)
+[train 276/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.170 score_r=+0.000 pg_loss=+0.0221 [mem] VmRSS=422.7 MiB sys_avail=2907 MiB
+TRAIN: T=735 minibatch_size=735 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.185590
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.1133  anchor mean(bce)*weight=+0.6188  (anchor rows=300/735=40.8% of combined batch)
+[train 277/300] reward=+0.1 checkpoints= 1/66 len= 435 outcome=cp_terminated ring_r=-0.370 score_r=+0.000 pg_loss=+0.1856 [mem] VmRSS=340.3 MiB sys_avail=2992 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.040451
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0399  anchor mean(bce)*weight=+0.3463  (anchor rows=300/4300=7.0% of combined batch)
+[train 278/300] reward=+11.7 checkpoints=12/66 len=4000 outcome=timeout ring_r=-0.300 score_r=+0.000 pg_loss=-0.0405 [mem] VmRSS=422.7 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.066823
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0124  anchor mean(bce)*weight=+0.5070  (anchor rows=300/4300=7.0% of combined batch)
+[train 279/300] reward=+7.2 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.180 score_r=+0.000 pg_loss=+0.0668 [mem] VmRSS=422.8 MiB sys_avail=2909 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.031160
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0065  anchor mean(bce)*weight=+0.2670  (anchor rows=300/4300=7.0% of combined batch)
+[train 280/300] reward=+7.1 checkpoints= 7/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=-0.0312 [mem] VmRSS=422.8 MiB sys_avail=2913 MiB
+  [health ep280] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.017999999225139618, 0.04600000008940697, 0.8240000009536743, 0.12399999797344208, 0.0, 0.0, 0.0] std=[0.0, 0.0, 0.0, 0.0860000029206276, 0.19300000369548798, 0.3149999976158142, 0.25099998712539673, 0.0, 0.0, 0.0] overall_accuracy=0.9878 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.044366
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0131  anchor mean(bce)*weight=+0.4046  (anchor rows=300/4300=7.0% of combined batch)
+[train 281/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0444 [mem] VmRSS=423.0 MiB sys_avail=2910 MiB
+TRAIN: T=601 minibatch_size=601 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.129992
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0610  anchor mean(bce)*weight=+0.3217  (anchor rows=300/601=49.9% of combined batch)
+[train 282/300] reward=+0.5 checkpoints= 1/66 len= 301 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.1300 [mem] VmRSS=391.6 MiB sys_avail=2947 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035841
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0104  anchor mean(bce)*weight=+0.3249  (anchor rows=300/4300=7.0% of combined batch)
+[train 283/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0358 [mem] VmRSS=422.8 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.042814
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0080  anchor mean(bce)*weight=+0.3113  (anchor rows=300/4300=7.0% of combined batch)
+[train 284/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0428 [mem] VmRSS=423.1 MiB sys_avail=2895 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.030446
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0030  anchor mean(bce)*weight=+0.3399  (anchor rows=300/4300=7.0% of combined batch)
+[train 285/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0304 [mem] VmRSS=429.6 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036947
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0099  anchor mean(bce)*weight=+0.3234  (anchor rows=300/4300=7.0% of combined batch)
+[train 286/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0369 [mem] VmRSS=422.8 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.032241
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0023  anchor mean(bce)*weight=+0.3031  (anchor rows=300/4300=7.0% of combined batch)
+[train 287/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0322 [mem] VmRSS=422.8 MiB sys_avail=2890 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028734
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0036  anchor mean(bce)*weight=+0.2895  (anchor rows=300/4300=7.0% of combined batch)
+[train 288/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0287 [mem] VmRSS=429.6 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.028306
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0043  anchor mean(bce)*weight=+0.3068  (anchor rows=300/4300=7.0% of combined batch)
+[train 289/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0283 [mem] VmRSS=422.7 MiB sys_avail=2879 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022980
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0027  anchor mean(bce)*weight=+0.2517  (anchor rows=300/4300=7.0% of combined batch)
+[train 290/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0230 [mem] VmRSS=422.8 MiB sys_avail=2886 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.031477
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0037  anchor mean(bce)*weight=+0.4233  (anchor rows=300/4300=7.0% of combined batch)
+[train 291/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0315 [mem] VmRSS=422.9 MiB sys_avail=2883 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.030340
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0021  anchor mean(bce)*weight=+0.3864  (anchor rows=300/4300=7.0% of combined batch)
+[train 292/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0303 [mem] VmRSS=422.8 MiB sys_avail=2881 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.025196
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0007  anchor mean(bce)*weight=+0.3708  (anchor rows=300/4300=7.0% of combined batch)
+[train 293/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0252 [mem] VmRSS=422.8 MiB sys_avail=2881 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.023557
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0001  anchor mean(bce)*weight=+0.3846  (anchor rows=300/4300=7.0% of combined batch)
+[train 294/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0236 [mem] VmRSS=422.8 MiB sys_avail=2885 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.021926
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0000  anchor mean(bce)*weight=+0.3492  (anchor rows=300/4300=7.0% of combined batch)
+[train 295/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0219 [mem] VmRSS=422.9 MiB sys_avail=2891 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.016829
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0058  anchor mean(bce)*weight=+0.3294  (anchor rows=300/4300=7.0% of combined batch)
+[train 296/300] reward=+11.2 checkpoints=11/66 len=4000 outcome=timeout ring_r=+0.150 score_r=+0.000 pg_loss=+0.0168 [mem] VmRSS=422.9 MiB sys_avail=2889 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.022417
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0002  anchor mean(bce)*weight=+0.3109  (anchor rows=300/4300=7.0% of combined batch)
+[train 297/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0224 [mem] VmRSS=481.0 MiB sys_avail=2841 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.027773
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0065  anchor mean(bce)*weight=+0.3220  (anchor rows=300/4300=7.0% of combined batch)
+[train 298/300] reward=+1.0 checkpoints= 1/66 len=4000 outcome=timeout ring_r=+0.000 score_r=+0.000 pg_loss=+0.0278 [mem] VmRSS=429.8 MiB sys_avail=2886 MiB
+TRAIN: T=851 minibatch_size=851 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.094318
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=-0.0217  anchor mean(bce)*weight=+0.3076  (anchor rows=300/851=35.3% of combined batch)
+[train 299/300] reward=+0.5 checkpoints= 1/66 len= 551 outcome=cp_terminated ring_r=+0.000 score_r=+0.000 pg_loss=+0.0943 [mem] VmRSS=350.0 MiB sys_avail=2970 MiB
+TRAIN: T=4300 minibatch_size=1433 n_minibatches/epoch=3 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.036252
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+  [anchor-check] episode mean(bce*advantage)=+0.0108  anchor mean(bce)*weight=+0.2504  (anchor rows=300/4300=7.0% of combined batch)
+[train 300/300] reward=+8.1 checkpoints= 8/66 len=4000 outcome=timeout ring_r=+0.100 score_r=+0.000 pg_loss=+0.0363 [mem] VmRSS=480.8 MiB sys_avail=2843 MiB
+  [defeat-rate bucket] episodes 251-300: boss_defeat_rate=0.000 (0/50) mean_reward=+4.01 mean_checkpoints=4.06
+  [weights check] /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin: any_nan_or_inf=False (clean)
+  [health ep300] (checked against 10984 FIXED real demo frames, not self-play) per-button mean=[0.0, 0.0, 0.0, 0.010999999940395355, 0.03400000184774399, 0.871999979019165, 0.11100000143051147, 0.0, 0.0, 0.0] std=[0.0, 0.0010000000474974513, 0.0, 0.06800000369548798, 0.16899999976158142, 0.28600001335144043, 0.2329999953508377, 0.0, 0.0, 0.0] overall_accuracy=0.9881 (majority_baseline=0.9674) (buttons=['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z'])
+QUIT received - flushing weights
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+Training phase took 7857.8s for 300 episodes
+[mem] VmRSS after training phase: 354.4 MiB
+
+=== Baseline: 10 random-policy episodes (no learning, no net) ===
+[baseline   1/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2896 MiB
+[baseline   2/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2900 MiB
+[baseline   3/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2900 MiB
+[baseline   4/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2903 MiB
+[baseline   5/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2901 MiB
+[baseline   6/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2900 MiB
+[baseline   7/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2899 MiB
+[baseline   8/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2898 MiB
+[baseline   9/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2900 MiB
+[baseline  10/10] reward=+1.0 checkpoints= 1 len=4000 outcome=timeout [mem] VmRSS=423.0 MiB sys_avail=2902 MiB
+[mem] VmRSS after baseline phase: 354.7 MiB
+[mem] Peak VmRSS for this process (getrusage ru_maxrss), whole run: 701.8 MiB
+
+=== SUMMARY ===
+Training episodes 1-150 (early): mean_reward=+6.75 (std=4.87) mean_checkpoints=7.05 max_checkpoints=16
+Training episodes 151-300 (late): mean_reward=+6.24 (std=5.36) mean_checkpoints=6.47 max_checkpoints=16
+All training episodes: mean_reward=+6.49 (std=5.13) mean_checkpoints=6.76 max_checkpoints=16
+Random-policy baseline: mean_reward=+1.00 (std=0.00) mean_checkpoints=1.00 max_checkpoints=1
+
+=== BOSS-DEFEAT RATE BY BUCKET (Step 29, Foxo's explicit ask: see over time, not just final) ===
+  episodes 1-50: boss_defeat_rate=0.000 (0/50)
+  episodes 51-100: boss_defeat_rate=0.000 (0/50)
+  episodes 101-150: boss_defeat_rate=0.000 (0/50)
+  episodes 151-200: boss_defeat_rate=0.000 (0/50)
+  episodes 201-250: boss_defeat_rate=0.000 (0/50)
+  episodes 251-300: boss_defeat_rate=0.000 (0/50)
+  OVERALL: train boss_defeat_rate=0.000 (0/300) vs RANDOM BASELINE boss_defeat_rate=0.000 (0/10)
+Shutting down policy server (flushing weights)...

@@ -1,0 +1,258 @@
+=== Building combined BC batch from 5 demo file(s) ===
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz
+  raw actions shape: (2259, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2259 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 2160/2259 (98 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2161 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz
+  raw actions shape: (1923, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 1923 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 1887/1923 (35 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1888 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz
+  raw actions shape: (2568, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2568 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 2429/2568 (138 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2430 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz
+  raw actions shape: (2734, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2734 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 2580/2734 (153 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2581 frames (up to and including the cutscene-trigger entry)
+Ingesting demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz
+  raw actions shape: (2056, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2056 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#35) at step 1923/2056 (132 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1924 frames (up to and including the cutscene-trigger entry)
+
+Combined batch: 10984 total frames from 5 demo(s)
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz: 2161 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz: 1888 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz: 2430 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz: 2581 frames, sanity_check_passed=False
+  demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz: 1924 frames, sanity_check_passed=False
+  WARNING: at least one demo failed/warned on the cutscene-trigger sanity check (see detail above) - still including it in the combined batch, but worth reviewing before trusting the pretrained result.
+
+=== Running BC pretraining: 10984 frames, minibatch_size=1830, 30 epochs, lr=0.003, entropy_coef=0 (pure BCE) ===
+Note: 10980 of 10984 total frames used (6 minibatches of 1830); 4 leftover frames dropped (not evenly divisible)
+No existing weights at sonic_policy_weights_bc_pretrained_lrtest.bin - randomly initialized 288658 params
+Policy net (v3, two-conv): conv2d(1->8,3x3)->SiLU->avgpool2x2->conv2d(8->16,3x3)->SiLU->avgpool2x2->dense(4480->64->10 sigmoid), REINFORCE loss
+total_frames=10984 minibatch_size=1830 n_minibatches/epoch=6 nepoch=30 lr=0.003 entropy_coef=0
+  epoch 1/30 minibatch 1/6: pg_loss = 6.942228  (4.716s, 0.21 it/s)
+  epoch 1/30 minibatch 2/6: pg_loss = 3.937815  (4.102s, 0.24 it/s)
+  epoch 1/30 minibatch 3/6: pg_loss = 2.304846  (4.085s, 0.24 it/s)
+  epoch 1/30 minibatch 4/6: pg_loss = 1.473952  (4.094s, 0.24 it/s)
+  epoch 1/30 minibatch 5/6: pg_loss = 1.220389  (4.100s, 0.24 it/s)
+  epoch 1/30 minibatch 6/6: pg_loss = 1.131362  (4.110s, 0.24 it/s)
+ -> epoch 1/30 average pg_loss = 2.835099
+  epoch 2/30 minibatch 1/6: pg_loss = 1.082949  (4.124s, 0.24 it/s)
+  epoch 2/30 minibatch 2/6: pg_loss = 1.279113  (4.138s, 0.24 it/s)
+  epoch 2/30 minibatch 3/6: pg_loss = 1.228681  (4.111s, 0.24 it/s)
+  epoch 2/30 minibatch 4/6: pg_loss = 1.156025  (4.108s, 0.24 it/s)
+  epoch 2/30 minibatch 5/6: pg_loss = 1.297619  (4.129s, 0.24 it/s)
+  epoch 2/30 minibatch 6/6: pg_loss = 1.222268  (4.124s, 0.24 it/s)
+ -> epoch 2/30 average pg_loss = 1.211109
+  epoch 3/30 minibatch 1/6: pg_loss = 1.237993  (4.115s, 0.24 it/s)
+  epoch 3/30 minibatch 2/6: pg_loss = 1.154342  (4.133s, 0.24 it/s)
+  epoch 3/30 minibatch 3/6: pg_loss = 1.016717  (4.131s, 0.24 it/s)
+  epoch 3/30 minibatch 4/6: pg_loss = 1.027507  (4.148s, 0.24 it/s)
+  epoch 3/30 minibatch 5/6: pg_loss = 1.117440  (4.130s, 0.24 it/s)
+  epoch 3/30 minibatch 6/6: pg_loss = 1.030576  (4.121s, 0.24 it/s)
+ -> epoch 3/30 average pg_loss = 1.097429
+  epoch 4/30 minibatch 1/6: pg_loss = 0.975636  (4.141s, 0.24 it/s)
+  epoch 4/30 minibatch 2/6: pg_loss = 1.009338  (4.118s, 0.24 it/s)
+  epoch 4/30 minibatch 3/6: pg_loss = 1.007291  (4.135s, 0.24 it/s)
+  epoch 4/30 minibatch 4/6: pg_loss = 1.010220  (4.136s, 0.24 it/s)
+  epoch 4/30 minibatch 5/6: pg_loss = 1.082388  (4.141s, 0.24 it/s)
+  epoch 4/30 minibatch 6/6: pg_loss = 1.016488  (4.142s, 0.24 it/s)
+ -> epoch 4/30 average pg_loss = 1.016894
+  epoch 5/30 minibatch 1/6: pg_loss = 1.052529  (4.147s, 0.24 it/s)
+  epoch 5/30 minibatch 2/6: pg_loss = 1.005338  (4.153s, 0.24 it/s)
+  epoch 5/30 minibatch 3/6: pg_loss = 0.942922  (4.156s, 0.24 it/s)
+  epoch 5/30 minibatch 4/6: pg_loss = 0.989269  (4.159s, 0.24 it/s)
+  epoch 5/30 minibatch 5/6: pg_loss = 0.937225  (4.148s, 0.24 it/s)
+  epoch 5/30 minibatch 6/6: pg_loss = 1.001176  (4.148s, 0.24 it/s)
+ -> epoch 5/30 average pg_loss = 0.988076
+  epoch 6/30 minibatch 1/6: pg_loss = 0.968531  (4.121s, 0.24 it/s)
+  epoch 6/30 minibatch 2/6: pg_loss = 1.003890  (4.164s, 0.24 it/s)
+  epoch 6/30 minibatch 3/6: pg_loss = 0.964339  (4.151s, 0.24 it/s)
+  epoch 6/30 minibatch 4/6: pg_loss = 0.962046  (4.151s, 0.24 it/s)
+  epoch 6/30 minibatch 5/6: pg_loss = 0.989086  (4.159s, 0.24 it/s)
+  epoch 6/30 minibatch 6/6: pg_loss = 0.909002  (4.149s, 0.24 it/s)
+ -> epoch 6/30 average pg_loss = 0.966149
+  epoch 7/30 minibatch 1/6: pg_loss = 0.928318  (4.136s, 0.24 it/s)
+  epoch 7/30 minibatch 2/6: pg_loss = 0.947319  (4.151s, 0.24 it/s)
+  epoch 7/30 minibatch 3/6: pg_loss = 0.932517  (4.154s, 0.24 it/s)
+  epoch 7/30 minibatch 4/6: pg_loss = 0.922908  (4.165s, 0.24 it/s)
+  epoch 7/30 minibatch 5/6: pg_loss = 0.960441  (4.153s, 0.24 it/s)
+  epoch 7/30 minibatch 6/6: pg_loss = 0.968252  (4.160s, 0.24 it/s)
+ -> epoch 7/30 average pg_loss = 0.943293
+  epoch 8/30 minibatch 1/6: pg_loss = 0.962364  (4.141s, 0.24 it/s)
+  epoch 8/30 minibatch 2/6: pg_loss = 0.938362  (4.148s, 0.24 it/s)
+  epoch 8/30 minibatch 3/6: pg_loss = 0.910106  (4.157s, 0.24 it/s)
+  epoch 8/30 minibatch 4/6: pg_loss = 0.927434  (4.153s, 0.24 it/s)
+  epoch 8/30 minibatch 5/6: pg_loss = 0.889419  (4.157s, 0.24 it/s)
+  epoch 8/30 minibatch 6/6: pg_loss = 0.911431  (4.150s, 0.24 it/s)
+ -> epoch 8/30 average pg_loss = 0.923186
+  epoch 9/30 minibatch 1/6: pg_loss = 0.900537  (4.148s, 0.24 it/s)
+  epoch 9/30 minibatch 2/6: pg_loss = 0.903381  (4.121s, 0.24 it/s)
+  epoch 9/30 minibatch 3/6: pg_loss = 0.896354  (4.142s, 0.24 it/s)
+  epoch 9/30 minibatch 4/6: pg_loss = 0.918768  (4.159s, 0.24 it/s)
+  epoch 9/30 minibatch 5/6: pg_loss = 0.936347  (4.145s, 0.24 it/s)
+  epoch 9/30 minibatch 6/6: pg_loss = 0.886010  (4.147s, 0.24 it/s)
+ -> epoch 9/30 average pg_loss = 0.906900
+  epoch 10/30 minibatch 1/6: pg_loss = 0.882481  (4.165s, 0.24 it/s)
+  epoch 10/30 minibatch 2/6: pg_loss = 0.903641  (4.147s, 0.24 it/s)
+  epoch 10/30 minibatch 3/6: pg_loss = 0.921616  (4.145s, 0.24 it/s)
+  epoch 10/30 minibatch 4/6: pg_loss = 0.876062  (4.136s, 0.24 it/s)
+  epoch 10/30 minibatch 5/6: pg_loss = 0.863955  (4.154s, 0.24 it/s)
+  epoch 10/30 minibatch 6/6: pg_loss = 0.901147  (4.154s, 0.24 it/s)
+ -> epoch 10/30 average pg_loss = 0.891483
+  epoch 11/30 minibatch 1/6: pg_loss = 0.825730  (4.150s, 0.24 it/s)
+  epoch 11/30 minibatch 2/6: pg_loss = 0.884868  (4.152s, 0.24 it/s)
+  epoch 11/30 minibatch 3/6: pg_loss = 0.858909  (4.140s, 0.24 it/s)
+  epoch 11/30 minibatch 4/6: pg_loss = 0.937397  (4.147s, 0.24 it/s)
+  epoch 11/30 minibatch 5/6: pg_loss = 0.866016  (4.161s, 0.24 it/s)
+  epoch 11/30 minibatch 6/6: pg_loss = 0.891912  (4.165s, 0.24 it/s)
+ -> epoch 11/30 average pg_loss = 0.877472
+  epoch 12/30 minibatch 1/6: pg_loss = 0.819462  (4.153s, 0.24 it/s)
+  epoch 12/30 minibatch 2/6: pg_loss = 0.882241  (4.143s, 0.24 it/s)
+  epoch 12/30 minibatch 3/6: pg_loss = 0.860861  (4.116s, 0.24 it/s)
+  epoch 12/30 minibatch 4/6: pg_loss = 0.855098  (4.138s, 0.24 it/s)
+  epoch 12/30 minibatch 5/6: pg_loss = 0.903434  (4.144s, 0.24 it/s)
+  epoch 12/30 minibatch 6/6: pg_loss = 0.833618  (4.142s, 0.24 it/s)
+ -> epoch 12/30 average pg_loss = 0.859119
+  epoch 13/30 minibatch 1/6: pg_loss = 0.859885  (4.149s, 0.24 it/s)
+  epoch 13/30 minibatch 2/6: pg_loss = 0.807308  (4.168s, 0.24 it/s)
+  epoch 13/30 minibatch 3/6: pg_loss = 0.830164  (4.166s, 0.24 it/s)
+  epoch 13/30 minibatch 4/6: pg_loss = 0.824625  (4.144s, 0.24 it/s)
+  epoch 13/30 minibatch 5/6: pg_loss = 0.902767  (4.144s, 0.24 it/s)
+  epoch 13/30 minibatch 6/6: pg_loss = 0.811426  (4.154s, 0.24 it/s)
+ -> epoch 13/30 average pg_loss = 0.839363
+  epoch 14/30 minibatch 1/6: pg_loss = 0.836284  (4.133s, 0.24 it/s)
+  epoch 14/30 minibatch 2/6: pg_loss = 0.820473  (4.137s, 0.24 it/s)
+  epoch 14/30 minibatch 3/6: pg_loss = 0.860447  (4.149s, 0.24 it/s)
+  epoch 14/30 minibatch 4/6: pg_loss = 0.792146  (4.155s, 0.24 it/s)
+  epoch 14/30 minibatch 5/6: pg_loss = 0.767822  (4.141s, 0.24 it/s)
+  epoch 14/30 minibatch 6/6: pg_loss = 0.852625  (4.201s, 0.24 it/s)
+ -> epoch 14/30 average pg_loss = 0.821633
+  epoch 15/30 minibatch 1/6: pg_loss = 0.797912  (4.179s, 0.24 it/s)
+  epoch 15/30 minibatch 2/6: pg_loss = 0.839949  (4.176s, 0.24 it/s)
+  epoch 15/30 minibatch 3/6: pg_loss = 0.769918  (4.173s, 0.24 it/s)
+  epoch 15/30 minibatch 4/6: pg_loss = 0.835518  (4.168s, 0.24 it/s)
+  epoch 15/30 minibatch 5/6: pg_loss = 0.830323  (4.178s, 0.24 it/s)
+  epoch 15/30 minibatch 6/6: pg_loss = 0.763876  (4.194s, 0.24 it/s)
+ -> epoch 15/30 average pg_loss = 0.806249
+  epoch 16/30 minibatch 1/6: pg_loss = 0.813763  (4.182s, 0.24 it/s)
+  epoch 16/30 minibatch 2/6: pg_loss = 0.767654  (4.162s, 0.24 it/s)
+  epoch 16/30 minibatch 3/6: pg_loss = 0.806318  (4.185s, 0.24 it/s)
+  epoch 16/30 minibatch 4/6: pg_loss = 0.759973  (4.180s, 0.24 it/s)
+  epoch 16/30 minibatch 5/6: pg_loss = 0.814743  (4.169s, 0.24 it/s)
+  epoch 16/30 minibatch 6/6: pg_loss = 0.786785  (4.181s, 0.24 it/s)
+ -> epoch 16/30 average pg_loss = 0.791539
+  epoch 17/30 minibatch 1/6: pg_loss = 0.769571  (4.139s, 0.24 it/s)
+  epoch 17/30 minibatch 2/6: pg_loss = 0.715435  (4.200s, 0.24 it/s)
+  epoch 17/30 minibatch 3/6: pg_loss = 0.813602  (4.167s, 0.24 it/s)
+  epoch 17/30 minibatch 4/6: pg_loss = 0.797028  (4.181s, 0.24 it/s)
+  epoch 17/30 minibatch 5/6: pg_loss = 0.779732  (4.183s, 0.24 it/s)
+  epoch 17/30 minibatch 6/6: pg_loss = 0.833441  (4.184s, 0.24 it/s)
+ -> epoch 17/30 average pg_loss = 0.784801
+  epoch 18/30 minibatch 1/6: pg_loss = 0.760832  (4.184s, 0.24 it/s)
+  epoch 18/30 minibatch 2/6: pg_loss = 0.803869  (4.175s, 0.24 it/s)
+  epoch 18/30 minibatch 3/6: pg_loss = 0.777071  (4.169s, 0.24 it/s)
+  epoch 18/30 minibatch 4/6: pg_loss = 0.789261  (4.183s, 0.24 it/s)
+  epoch 18/30 minibatch 5/6: pg_loss = 0.778620  (4.190s, 0.24 it/s)
+  epoch 18/30 minibatch 6/6: pg_loss = 0.729708  (4.195s, 0.24 it/s)
+ -> epoch 18/30 average pg_loss = 0.773227
+  epoch 19/30 minibatch 1/6: pg_loss = 0.759598  (4.188s, 0.24 it/s)
+  epoch 19/30 minibatch 2/6: pg_loss = 0.730687  (4.169s, 0.24 it/s)
+  epoch 19/30 minibatch 3/6: pg_loss = 0.727274  (4.185s, 0.24 it/s)
+  epoch 19/30 minibatch 4/6: pg_loss = 0.773880  (4.181s, 0.24 it/s)
+  epoch 19/30 minibatch 5/6: pg_loss = 0.761869  (4.149s, 0.24 it/s)
+  epoch 19/30 minibatch 6/6: pg_loss = 0.729608  (4.128s, 0.24 it/s)
+ -> epoch 19/30 average pg_loss = 0.747153
+  epoch 20/30 minibatch 1/6: pg_loss = 0.758216  (4.181s, 0.24 it/s)
+  epoch 20/30 minibatch 2/6: pg_loss = 0.717126  (4.176s, 0.24 it/s)
+  epoch 20/30 minibatch 3/6: pg_loss = 0.730989  (4.167s, 0.24 it/s)
+  epoch 20/30 minibatch 4/6: pg_loss = 0.692015  (4.172s, 0.24 it/s)
+  epoch 20/30 minibatch 5/6: pg_loss = 0.735884  (4.162s, 0.24 it/s)
+  epoch 20/30 minibatch 6/6: pg_loss = 0.731221  (4.160s, 0.24 it/s)
+ -> epoch 20/30 average pg_loss = 0.727575
+  epoch 21/30 minibatch 1/6: pg_loss = 0.720624  (4.186s, 0.24 it/s)
+  epoch 21/30 minibatch 2/6: pg_loss = 0.703525  (4.179s, 0.24 it/s)
+  epoch 21/30 minibatch 3/6: pg_loss = nan  (4.149s, 0.24 it/s)
+  epoch 21/30 minibatch 4/6: pg_loss = nan  (4.131s, 0.24 it/s)
+  epoch 21/30 minibatch 5/6: pg_loss = nan  (4.146s, 0.24 it/s)
+  epoch 21/30 minibatch 6/6: pg_loss = nan  (4.142s, 0.24 it/s)
+ -> epoch 21/30 average pg_loss = nan
+  epoch 22/30 minibatch 1/6: pg_loss = nan  (4.138s, 0.24 it/s)
+  epoch 22/30 minibatch 2/6: pg_loss = nan  (4.126s, 0.24 it/s)
+  epoch 22/30 minibatch 3/6: pg_loss = nan  (4.150s, 0.24 it/s)
+  epoch 22/30 minibatch 4/6: pg_loss = nan  (4.135s, 0.24 it/s)
+  epoch 22/30 minibatch 5/6: pg_loss = nan  (4.160s, 0.24 it/s)
+  epoch 22/30 minibatch 6/6: pg_loss = nan  (4.142s, 0.24 it/s)
+ -> epoch 22/30 average pg_loss = nan
+  epoch 23/30 minibatch 1/6: pg_loss = nan  (4.147s, 0.24 it/s)
+  epoch 23/30 minibatch 2/6: pg_loss = nan  (4.119s, 0.24 it/s)
+  epoch 23/30 minibatch 3/6: pg_loss = nan  (4.125s, 0.24 it/s)
+  epoch 23/30 minibatch 4/6: pg_loss = nan  (4.141s, 0.24 it/s)
+  epoch 23/30 minibatch 5/6: pg_loss = nan  (4.122s, 0.24 it/s)
+  epoch 23/30 minibatch 6/6: pg_loss = nan  (4.130s, 0.24 it/s)
+ -> epoch 23/30 average pg_loss = nan
+  epoch 24/30 minibatch 1/6: pg_loss = nan  (4.138s, 0.24 it/s)
+  epoch 24/30 minibatch 2/6: pg_loss = nan  (4.159s, 0.24 it/s)
+  epoch 24/30 minibatch 3/6: pg_loss = nan  (4.131s, 0.24 it/s)
+  epoch 24/30 minibatch 4/6: pg_loss = nan  (4.146s, 0.24 it/s)
+  epoch 24/30 minibatch 5/6: pg_loss = nan  (4.105s, 0.24 it/s)
+  epoch 24/30 minibatch 6/6: pg_loss = nan  (4.146s, 0.24 it/s)
+ -> epoch 24/30 average pg_loss = nan
+  epoch 25/30 minibatch 1/6: pg_loss = nan  (4.125s, 0.24 it/s)
+  epoch 25/30 minibatch 2/6: pg_loss = nan  (4.133s, 0.24 it/s)
+  epoch 25/30 minibatch 3/6: pg_loss = nan  (4.126s, 0.24 it/s)
+  epoch 25/30 minibatch 4/6: pg_loss = nan  (4.118s, 0.24 it/s)
+  epoch 25/30 minibatch 5/6: pg_loss = nan  (4.132s, 0.24 it/s)
+  epoch 25/30 minibatch 6/6: pg_loss = nan  (4.134s, 0.24 it/s)
+ -> epoch 25/30 average pg_loss = nan
+  epoch 26/30 minibatch 1/6: pg_loss = nan  (4.125s, 0.24 it/s)
+  epoch 26/30 minibatch 2/6: pg_loss = nan  (4.133s, 0.24 it/s)
+  epoch 26/30 minibatch 3/6: pg_loss = nan  (4.134s, 0.24 it/s)
+  epoch 26/30 minibatch 4/6: pg_loss = nan  (4.121s, 0.24 it/s)
+  epoch 26/30 minibatch 5/6: pg_loss = nan  (4.127s, 0.24 it/s)
+  epoch 26/30 minibatch 6/6: pg_loss = nan  (4.110s, 0.24 it/s)
+ -> epoch 26/30 average pg_loss = nan
+  epoch 27/30 minibatch 1/6: pg_loss = nan  (4.136s, 0.24 it/s)
+  epoch 27/30 minibatch 2/6: pg_loss = nan  (4.135s, 0.24 it/s)
+  epoch 27/30 minibatch 3/6: pg_loss = nan  (4.142s, 0.24 it/s)
+  epoch 27/30 minibatch 4/6: pg_loss = nan  (4.130s, 0.24 it/s)
+  epoch 27/30 minibatch 5/6: pg_loss = nan  (4.130s, 0.24 it/s)
+  epoch 27/30 minibatch 6/6: pg_loss = nan  (4.072s, 0.25 it/s)
+ -> epoch 27/30 average pg_loss = nan
+  epoch 28/30 minibatch 1/6: pg_loss = nan  (4.115s, 0.24 it/s)
+  epoch 28/30 minibatch 2/6: pg_loss = nan  (4.118s, 0.24 it/s)
+  epoch 28/30 minibatch 3/6: pg_loss = nan  (4.136s, 0.24 it/s)
+  epoch 28/30 minibatch 4/6: pg_loss = nan  (4.133s, 0.24 it/s)
+  epoch 28/30 minibatch 5/6: pg_loss = nan  (4.134s, 0.24 it/s)
+  epoch 28/30 minibatch 6/6: pg_loss = nan  (4.139s, 0.24 it/s)
+ -> epoch 28/30 average pg_loss = nan
+  epoch 29/30 minibatch 1/6: pg_loss = nan  (4.110s, 0.24 it/s)
+  epoch 29/30 minibatch 2/6: pg_loss = nan  (4.119s, 0.24 it/s)
+  epoch 29/30 minibatch 3/6: pg_loss = nan  (4.097s, 0.24 it/s)
+  epoch 29/30 minibatch 4/6: pg_loss = nan  (4.132s, 0.24 it/s)
+  epoch 29/30 minibatch 5/6: pg_loss = nan  (4.111s, 0.24 it/s)
+  epoch 29/30 minibatch 6/6: pg_loss = nan  (4.128s, 0.24 it/s)
+ -> epoch 29/30 average pg_loss = nan
+  epoch 30/30 minibatch 1/6: pg_loss = nan  (4.120s, 0.24 it/s)
+  epoch 30/30 minibatch 2/6: pg_loss = nan  (4.126s, 0.24 it/s)
+  epoch 30/30 minibatch 3/6: pg_loss = nan  (4.139s, 0.24 it/s)
+  epoch 30/30 minibatch 4/6: pg_loss = nan  (4.102s, 0.24 it/s)
+  epoch 30/30 minibatch 5/6: pg_loss = nan  (4.109s, 0.24 it/s)
+  epoch 30/30 minibatch 6/6: pg_loss = nan  (4.090s, 0.24 it/s)
+ -> epoch 30/30 average pg_loss = nan
+Timing summary: first minibatch step (incl. one-time Vulkan warm-up) = 4.716s (0.21 it/s); steady-state over remaining 179 minibatch steps = 4.145s/step avg (0.24 it/s)
+Weights saved to sonic_policy_weights_bc_pretrained_lrtest.bin
+
+BC-pretrained weights written to sonic_policy_weights_bc_pretrained_lrtest.bin
+LEARNABLE_BUTTONS order (for reference): ['B', 'A', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'C', 'Y', 'X', 'Z']
+
+To actually use this as the RL starting point: copy/rename this file over sonic_rl_train.py's WEIGHTS_FILE (sonic_policy_weights.bin) BEFORE launching a training run - this script deliberately does not do that automatically.
+EXIT=0

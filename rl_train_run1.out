@@ -1,0 +1,333 @@
+Loaded 36 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+Warm-starting from existing weights file: /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (e.g. a BC-pretrained checkpoint deliberately placed there beforehand)
+Action-sequence logs for this run -> /home/foxo/gateway-vulkan-rl/action_logs/20261107_213303/ (one .npy per episode, replayable later via replay_episode.py)
+
+=== Training: 500 episodes, max_steps=3000, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 65.4 MiB
+[train   1/500] reward=+7.5 checkpoints= 8/34 len=3000 outcome=timeout [mem] VmRSS=182.5 MiB
+[train   2/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train   3/500] reward=+12.0 checkpoints=11/34 len=3000 outcome=timeout
+[train   4/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train   5/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train   6/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train   7/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train   8/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train   9/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  10/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.5 MiB
+[train  11/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  12/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  13/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  14/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  15/500] reward=+1.0 checkpoints= 1/34 len=3000 outcome=timeout
+[train  16/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  17/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  18/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  19/500] reward=+11.0 checkpoints=11/34 len=3000 outcome=timeout
+[train  20/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.6 MiB
+[train  21/500] reward=+11.0 checkpoints=11/34 len=3000 outcome=timeout
+[train  22/500] reward=+10.0 checkpoints= 9/34 len=3000 outcome=timeout
+[train  23/500] reward=+10.0 checkpoints=10/34 len=3000 outcome=timeout
+[train  24/500] reward=+2.0 checkpoints= 4/34 len=2496 outcome=died
+[train  25/500] reward=+4.0 checkpoints= 5/34 len=1324 outcome=died
+[train  26/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  27/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  28/500] reward=+4.0 checkpoints= 5/34 len=1819 outcome=died
+[train  29/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  30/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.7 MiB
+[train  31/500] reward=+11.0 checkpoints=10/34 len=3000 outcome=timeout
+[train  32/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  33/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  34/500] reward=+4.5 checkpoints= 5/34 len=3000 outcome=timeout
+[train  35/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  36/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  37/500] reward=+12.0 checkpoints=11/34 len=3000 outcome=timeout
+[train  38/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  39/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  40/500] reward=+4.0 checkpoints= 5/34 len=1253 outcome=died [mem] VmRSS=193.1 MiB
+[train  41/500] reward=+11.0 checkpoints=10/34 len=3000 outcome=timeout
+[train  42/500] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout
+[train  43/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  44/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  45/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  46/500] reward=+1.0 checkpoints= 1/34 len=3000 outcome=timeout
+[train  47/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  48/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  49/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  50/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.7 MiB
+[train  51/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  52/500] reward=+6.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train  53/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  54/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  55/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train  56/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  57/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  58/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  59/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  60/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=182.7 MiB
+[train  61/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  62/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  63/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  64/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  65/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  66/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  67/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  68/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  69/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  70/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train  71/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train  72/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  73/500] reward=+1.0 checkpoints= 1/34 len=3000 outcome=timeout
+[train  74/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  75/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  76/500] reward=+1.0 checkpoints= 1/34 len=3000 outcome=timeout
+[train  77/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  78/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  79/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  80/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train  81/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  82/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  83/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  84/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train  85/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  86/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  87/500] reward=+3.0 checkpoints= 4/34 len=2868 outcome=died
+[train  88/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  89/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  90/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout [mem] VmRSS=182.7 MiB
+[train  91/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  92/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  93/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  94/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  95/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train  96/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  97/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train  98/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train  99/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 100/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 101/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 102/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 103/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 104/500] reward=+2.0 checkpoints= 4/34 len=1947 outcome=died
+[train 105/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 106/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 107/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 108/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 109/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 110/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 111/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 112/500] reward=+1.0 checkpoints= 1/34 len=3000 outcome=timeout
+[train 113/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 114/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 115/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 116/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 117/500] reward=+3.0 checkpoints= 5/34 len=2640 outcome=died
+[train 118/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 119/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train 120/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 121/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train 122/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 123/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train 124/500] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout
+[train 125/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 126/500] reward=+2.0 checkpoints= 4/34 len=2923 outcome=died
+[train 127/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 128/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 129/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 130/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 131/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 132/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 133/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 134/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 135/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 136/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 137/500] reward=+3.0 checkpoints= 5/34 len=2436 outcome=died
+[train 138/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 139/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 140/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 141/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 142/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 143/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 144/500] reward=+3.0 checkpoints= 5/34 len=2762 outcome=died
+[train 145/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 146/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 147/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 148/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 149/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 150/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 151/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 152/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 153/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 154/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 155/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 156/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 157/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 158/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 159/500] reward=+6.0 checkpoints= 7/34 len=1942 outcome=hazard
+[train 160/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 161/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 162/500] reward=+3.0 checkpoints= 5/34 len=2034 outcome=died
+[train 163/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 164/500] reward=+2.5 checkpoints= 3/34 len=3000 outcome=timeout
+[train 165/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 166/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 167/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 168/500] reward=+3.5 checkpoints= 4/34 len=3000 outcome=timeout
+[train 169/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 170/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 171/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 172/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 173/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 174/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 175/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 176/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 177/500] reward=+4.0 checkpoints= 5/34 len=1409 outcome=died
+[train 178/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 179/500] reward=+4.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 180/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 181/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 182/500] reward=+2.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 183/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 184/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 185/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 186/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 187/500] reward=+3.0 checkpoints= 5/34 len=2525 outcome=died
+[train 188/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 189/500] reward=+2.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 190/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.7 MiB
+[train 191/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 192/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 193/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 194/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 195/500] reward=+3.0 checkpoints= 5/34 len=1132 outcome=died
+[train 196/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 197/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 198/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 199/500] reward=+8.0 checkpoints= 7/34 len=3000 outcome=timeout
+[train 200/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=186.9 MiB
+[train 201/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 202/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 203/500] reward=+3.0 checkpoints= 5/34 len=2698 outcome=died
+[train 204/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 205/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 206/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 207/500] reward=+3.0 checkpoints= 5/34 len=1758 outcome=died
+[train 208/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 209/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 210/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.6 MiB
+[train 211/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 212/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 213/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 214/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 215/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 216/500] reward=+4.0 checkpoints= 5/34 len=1741 outcome=died
+[train 217/500] reward=+3.5 checkpoints= 4/34 len=3000 outcome=timeout
+[train 218/500] reward=+4.0 checkpoints= 6/34 len=2327 outcome=hazard
+[train 219/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 220/500] reward=+2.0 checkpoints= 4/34 len=1731 outcome=died [mem] VmRSS=217.6 MiB
+[train 221/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 222/500] reward=+8.0 checkpoints= 8/34 len=3000 outcome=timeout
+[train 223/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 224/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 225/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 226/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 227/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 228/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 229/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 230/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 231/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 232/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 233/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 234/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 235/500] reward=+3.0 checkpoints= 5/34 len=2082 outcome=died
+[train 236/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 237/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 238/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 239/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 240/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 241/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 242/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 243/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 244/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 245/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 246/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 247/500] reward=+6.0 checkpoints= 7/34 len=1967 outcome=hazard
+[train 248/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 249/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 250/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 251/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 252/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 253/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 254/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 255/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 256/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 257/500] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 258/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 259/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 260/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 261/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 262/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 263/500] reward=+3.5 checkpoints= 4/34 len=3000 outcome=timeout
+[train 264/500] reward=+3.5 checkpoints= 4/34 len=3000 outcome=timeout
+[train 265/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 266/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 267/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 268/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 269/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 270/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 271/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 272/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 273/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 274/500] reward=+6.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 275/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 276/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 277/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 278/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 279/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 280/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.8 MiB
+[train 281/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 282/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 283/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 284/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 285/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 286/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 287/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 288/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 289/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 290/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 291/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 292/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 293/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 294/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 295/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 296/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 297/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 298/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 299/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 300/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 301/500] reward=+8.0 checkpoints= 8/34 len=3000 outcome=timeout
+[train 302/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 303/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 304/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 305/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 306/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 307/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 308/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 309/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 310/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 311/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 312/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 313/500] reward=+3.0 checkpoints= 5/34 len=2146 outcome=died
+[train 314/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 315/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 316/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 317/500] reward=+7.0 checkpoints= 6/34 len=3000 outcome=timeout
+[train 318/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 319/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 320/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout [mem] VmRSS=182.9 MiB
+[train 321/500] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout
+[train 322/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 323/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 324/500] reward=+6.0 checkpoints= 5/34 len=3000 outcome=timeout
+[train 325/500] reward=+2.0 checkpoints= 2/34 len=3000 outcome=timeout
+[train 326/500] reward=+3.0 checkpoints= 3/34 len=3000 outcome=timeout
+[train 327/500] reward=+5.0 checkpoints= 4/34 len=3000 outcome=timeout

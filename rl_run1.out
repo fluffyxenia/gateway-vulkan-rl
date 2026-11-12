@@ -1,0 +1,33 @@
+Loaded 36 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+
+=== Training: 80 episodes, max_steps=600, gamma=0.95, lr=0.01 ===
+[train   1/80] reward=+2.0 checkpoints= 2/34 len= 600 outcome=timeout
+[train   2/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   3/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   4/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   5/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   6/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   7/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   8/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train   9/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  10/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  11/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  12/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  13/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  14/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  15/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  16/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  17/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  18/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  19/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  20/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  21/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  22/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  23/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  24/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  25/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  26/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  27/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  28/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  29/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout
+[train  30/80] reward=+0.0 checkpoints= 0/34 len= 600 outcome=timeout

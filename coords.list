@@ -1,0 +1,225 @@
+# Angel Island ACT 1=
+# ((A,B),(X,Y))
+# Both are big endian 16 bit, but Y is inverted (up=subtract, down=add)
+
+# Step 15: start-zone kill checkpoint - ends a non-progressing episode immediately
+# instead of burning the whole step budget wandering near spawn. Real spawn position
+# measured directly via env.reset()+first step(): x=5002, y=1051 (confirmed, not
+# assumed - see AGENTS.md "Step 15"). This box's x range [5010,5045] deliberately
+# excludes x=5002 on the low side (8px margin) and stays below the next box's x_min=5050
+# on the high side (5px margin), so it can never trigger on the literal spawn frame.
+# Real per-step x deltas measured from an actual demo's first 40 steps near the start:
+# max +2px/step, so a 35px-wide box has a large tunneling safety margin at this point in
+# the level (nowhere near the fast-moving/camera-locked segments that forced the
+# narrow-box threshold redesigns elsewhere in this file). [disable_after: initial
+# checkpoint] makes this permanently inert for the rest of the episode the moment the
+# very next real checkpoint is reached, so a later legitimate backtrack into this x/y
+# region can't retroactively kill an otherwise-successful run.
+((5010,0),(5045,1135)) [disable_after: initial checkpoint] # start-zone kill checkpoint, non-progressing episode
+
+((5050,0),(5060,1135)) # initial checkpoint
+
+((5250,0),(5260,1135)) # another checkpoint
+
+((5825,910),(5915,1004)) # first hill
+
+((6168,1003),(6242,1058)) # first enemy, if in-game score goes up about 30~60 frames after going in this area, assume enemy defeated
+
+((6334,990),(6401,1052)) # first ramp
+
+((6114,637),(6221,728)) # how did you get up here? special area, single exploratory point
+
+((6795,945),(6842,1004)) # past the first annoying spring
+
+((7461,918),(7488,980)) # past the second enemy and near the ropes
+
+((7443,1159),(7491,1234)) # no special stage handling... yet. avoid this for now
+
+((8483,746),(8539,932)) # top route first section start
+
+((8482,997),(8533,1136)) # bottom route first section start
+
+((8767,705),(8828,889)) # top route midpoint
+
+((8809,1171),(8878,1198)) # bottom route loop first segment
+
+((8885,1066),(8935,1146)) # loop second segment
+
+((8757,1030),(8926,1059)) # third segment
+
+((8725,1059),(8757,1143)) # fourth segment
+
+((9096,1181),(9215,1276)) # bottom loop exit + ramp
+
+((9149,1340),(9794,1393)) # **w a t e r**, get out of there
+
+((9273,857),(9374,996)) # top route first section end
+
+((9621,794),(9724,890)) # top route second section begin
+
+((9797,963),(9845,1205)) # bottom second section begin
+
+((10308,972),(10396,1104)) # bottom section midpoint
+
+((10311,422),(10390,759)) # top section midpoint
+
+((10675,644),(10737,784)) # top loop entry and right side (just hold right)
+
+((10532,644),(10717,682)) # top loop middle (just hold right)
+
+((10528,639),(10565,746)) # top loop left side (just hold right)
+
+((10717,812),(10788,874)) # top loop exit (just hold right)
+
+((10573,1062),(10980,1151)) # second loop bottom runway
+
+((11018,916),(11107,1146)) # second loop extended bottom entry
+
+((11057,873),(11125,814)) # second loop entry
+
+((10912,770),(11107,1051)) # second loop top
+
+((10912,770),(10942,874)) # second loop left
+
+((11155,942),(11224,1028)) # second loop exit
+
+((11410,660),(11704,1152)) # **JUST HOLD RIGHT. DO NOT LET GO OF THAT BUTTON HERE**
+
+>= 11707 [requires: DO NOT LET GO] # camera lock 1 trigger
+
+>= 12210 # interactive-cutscene trigger
+
+### PART OF ACT 1 UNLOADED, COORDS RESET
+### (confirmed independently - see AGENTS.md "Step 19": stepping past x>=12210 with
+### no-op input leads into the "Angel Island catches fire" story cutscene, x/y reset
+### to small values with no death/life-loss involved)
+
+# Step 22: merged in from coords_captured_from_foxo.list - Foxo's own hands-on Debug
+# Mode pass through the rest of AIZ1 (the continuation past the cutscene, through to
+# the miniboss). Raw file kept as coords_captured_from_foxo.list for reference. This
+# whole continuation has NOT been cross-validated against real demo footage the way
+# the boxes above were (all 5 real human demos truncate at the original cutscene
+# trigger, before any of this) - trusted as real, hands-on-gathered data per the
+# same process as every other coords.list addition, just without that specific
+# extra layer of verification this project used everywhere else.
+#
+# Needs CheckpointTracker(boxes, extend_past_end=True) to actually continue past the
+# "end"-kind box above instead of terminating there - see checkpoints.py "Step 21".
+# Default (extend_past_end=False) behavior for the box above is UNCHANGED, so
+# ingest_demo.py/bc_pretrain.py/check_bc_fit_real.py's existing BC-pretraining use of
+# it as the demo-truncation point keeps working exactly as before.
+#
+# Two near-identical "loop" box pairs appear below (e.g. two separate "Loop
+# entry"/"Loop top"/"Loop left"/"Loop exit" sets at slightly different coordinates) -
+# flagging rather than merging/deleting either: could be two different real routes
+# through the same loop traced on different attempts, intentionally kept distinct -
+# left exactly as given.
+#
+# Step 22 fix, caught by the same verification test as the boss-trigger one below:
+# this threshold (472) is numerically SMALLER than the OLD space's spawn position
+# itself (x=5002) - without a prerequisite it would fire within the first few steps
+# of EVERY episode, immediately after spawn, nowhere near any real cutscene.
+# [requires: interactive-cutscene trigger] ties it to the real "end"-kind box
+# (x>=12210) genuinely having been visited first - the box below (boss trigger) and
+# the TODO one both chain off THIS box's prerequisite, so fixing it here closes the
+# loophole for the whole chain, not just patching further down.
+
+>= 472 [requires: interactive-cutscene trigger] # Survived cutscene, probably
+
+((862,608),(958,763)) # Past the spikes; top+bottom fork
+
+((1068,1034),(1175,1091)) # Bottom route confirmed
+
+((452,825),(983,1249)) # The ENTIRE SPECIAL STAGE ROOM. It's a really big room. We can use this like a kill checkpoint if the model keeps going to this area.
+
+((1243,1097),(1307,1241)) # Smol ramp
+
+((1526,1328),(1821,1443)) # WATER AFTER RAMP, GET THE HELL OUT OF THERE (not a kill checkpoint)
+
+((1244,694),(1329,835)) # Top route begins
+
+((1654,775),(1747,854)) # Top route second platform
+
+((2147,668),(2241,886)) # Top route second platform ledge
+
+((2379,979),(2457,1059)) # Top route third platform
+
+((2807,868),(2929,991)) # Bottom/top routes converge; new water-bottom route branches
+
+((1364,921),(1807,1013)) # Almost certainly has fallen to bottom route
+
+((3255,978),(3303,1032)) # Loop entry
+
+((3104,894),(3305,933)) # Loop top
+
+((3096,933),(3137,1013)) # Loop left side
+
+((3311,1050),(3358,1101)) # Loop exit
+
+((1986,1071),(2088,1237)) # Bottom route midpoint
+
+((2378,1144),(2510,1250)) # Bottom route ledge
+
+((2597,1185),(2654,1246)) # Top of moving rock 1
+
+((2702,1130),(2765,1194)) # Top of moving rock 2
+
+((2817,1024),(2891,1193)) # Elevator to top route
+
+((3248,977),(3303,1032)) # Loop entrance
+
+((3092,901),(3303,936)) # Loop top
+
+((3081,936),(3147,1007)) # Loop left side
+
+((3312,1026),(3384,1115)) # Loop exit
+
+((3781,934),(3877,1018)) # Top platform 1
+
+((3509,731),(3624,884)) # Top platform 2
+
+((3646,734),(3747,872)) # Top platform 2 decaying ledge
+
+((3804,715),(3910,833)) # Final platform decaying ledge
+
+((3910,531),(3973,797)) # Ground; boss fight follows
+
+((2423,1314),(2980,1436)) # Fell into the bottom water section...
+
+((2958,1492),(3074,1617)) # Found the breakable ground, locked into bottom-water route
+
+((3317,1330),(3370,1442)) # Made it up the elevator, nearing convergence with top route
+
+((3378,1128),(3451,1253)) # Converged with the top route, somehow survived
+
+# Step 22 fix, caught by a real verification test before merging, not assumed safe:
+# this threshold is a bare "x >= N" check with NO memory of which coordinate
+# "epoch" x is in - and N (now 4500, was 4465 before the v2 coords merge) is
+# numerically SMALLER than the OLD pre-cutscene space's natural x range
+# (5002-12343+). Without a prerequisite, it would already be satisfied the
+# instant the OLD "interactive-cutscene trigger" (x>=12210) fires, before the
+# player ever touches the real post-cutscene continuation at all - confirmed by
+# a direct test that jumped straight to x=12210 under extend_past_end=True and
+# saw the boss trigger "fire" immediately, which is wrong. [requires: Survived
+# cutscene] (same mechanism as camera-lock-1's own [requires: DO NOT LET GO])
+# fixes this: that box can only be visited for real once x has genuinely reset
+# into the new post-cutscene space and climbed back past 472.
+#
+# Step 27 v2-coords merge: threshold moved 4465 -> 4500 per
+# coords_captured_from_foxo_v2.list (Foxo's refined capture). The old separate
+# ">= 4503 TODO: name this trigger" box from v1 is REMOVED here - v2 dropped it
+# entirely (diffed v1 vs v2 directly: the only other change was this same
+# edit), apparently superseded by the boss_hit_counter.py mechanism instead of
+# needing its own named checkpoint box. v2's own comment for this box is itself
+# truncated mid-sentence in the source file as pushed ("...Instead, watch boss"
+# - confirmed via wc/tail, not a read artifact on this end) - preserving the
+# fuller existing explanation below instead of replacing it with the cut-off one.
+>= 4500 [requires: Survived cutscene] # BOSS TRIGGER
+
+# For boss, disable normal X stagnation checks because camera is locked.
+# Checked directly (see AGENTS.md "Step 21"): the only stagnation-like mechanism in
+# this codebase is STAGNATION_PENALTY/STAGNATION_FREE_ATTEMPTS, keyed specifically to
+# repeated re-entry into an "enemy"-kind box - NOT a general x-position stagnation
+# check. The boss trigger above is classified as its own "boss_trigger" kind, not
+# "enemy", so this mechanism never applies to it regardless - no code change needed,
+# confirmed rather than assumed. Instead, watch boss_hit_counter.py's BossHitDetector.

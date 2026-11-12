@@ -1,0 +1,7 @@
+=== [pilot] method 2a (full-level-replay, real ROM, default start) ===
+=== [pilot] method 2a done ===
+=== [pilot] method 2b (save-state before boss, decomp ROM) ===
+=== [pilot] method 2b done ===
+=== [pilot] method 2c (save-state mid-level, decomp ROM) ===
+=== [pilot] method 2c done ===
+=== [pilot] ALL THREE METHODS COMPLETE - WEIGHTS_FILE reset to clean fullcov checkpoint ===

@@ -1,0 +1,136 @@
+Loaded 37 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000000.npz
+  raw actions shape: (2259, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2259 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2160/2259 (98 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2161 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-BottomRoute-000001.npz
+  raw actions shape: (1923, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 1923 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 1887/1923 (35 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1888 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000000.npz
+  raw actions shape: (2568, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2568 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2429/2568 (138 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2430 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopRoute-000001.npz
+  raw actions shape: (2734, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2734 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 2580/2734 (153 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 2581 frames (up to and including the cutscene-trigger entry)
+Ingesting /home/foxo/gateway-vulkan-rl/demos/SonicAndKnuckles3-Genesis-v0-AngelIslandZone.Act1-TopToBottomRoute-000000.npz
+  raw actions shape: (2056, 12) (expect (T, 12))
+  [ingest] Determinism check PASSED: all 2056 replayed steps exactly match the recording's own saved info (x/y/score/lives) - confirms the recording started from the standard default reset state.
+  [sanity check] FAILED/WARNING: Entered the cutscene-trigger box (#36) at step 1923/2056 (132 steps remain in the recording afterward). That's MORE than 30 steps before the recording ends - either the recording kept going well past the trigger (e.g. into the cutscene/next area), or the trigger was entered and left again earlier than intended. Worth a look, not necessarily wrong.
+  truncated to 1924 frames (up to and including the cutscene-trigger entry)
+Health-check reference batch: 10984 real demo frames, majority-class baseline accuracy=0.9674
+Warm-starting from existing weights file: /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (e.g. a BC-pretrained checkpoint, or a previous run's progress, deliberately left in place)
+Action-sequence logs for this run -> /home/foxo/gateway-vulkan-rl/action_logs/20261108_010309/ (one .npy per episode, replayable later via replay_episode.py)
+
+=== Training: 40 episodes, max_steps=3000, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 264.1 MiB
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Vega 10 Graphics (RADV RAVEN) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Loaded existing weights from /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin (288658 params)
+sonic_policy_server ready: IW=80 IH=56 N_BUTTONS=10 FLAT=4480 (persistent INFER graph allocated once, TRAIN graph rebuilt per call)
+  [anchor-check] episode mean(bce*advantage)=-0.0315  anchor mean(bce)*weight=+0.1580  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.014190
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   1/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.0142 [mem] VmRSS=388.4 MiB
+  [anchor-check] episode mean(bce*advantage)=-0.0389  anchor mean(bce)*weight=+0.3519  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.030928
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   2/40] reward=+6.0 checkpoints= 6/34 len=3000 outcome=timeout pg_loss=-0.0309
+  [anchor-check] episode mean(bce*advantage)=-0.0100  anchor mean(bce)*weight=+0.8787  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.008325
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   3/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=-0.0083
+  [anchor-check] episode mean(bce*advantage)=-0.0558  anchor mean(bce)*weight=+0.5828  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.060245
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   4/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=-0.0602
+  [anchor-check] episode mean(bce*advantage)=+0.0032  anchor mean(bce)*weight=+0.6147  (anchor rows=300/2133=14.1% of combined batch)
+TRAIN: T=2133 minibatch_size=1066 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.020663
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   5/40] reward=+3.0 checkpoints= 5/34 len=1833 outcome=died pg_loss=+0.0207
+  [anchor-check] episode mean(bce*advantage)=-0.0466  anchor mean(bce)*weight=+0.8484  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.005330
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   6/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=+0.0053
+  [anchor-check] episode mean(bce*advantage)=-0.0071  anchor mean(bce)*weight=+0.3107  (anchor rows=300/1282=23.4% of combined batch)
+TRAIN: T=1282 minibatch_size=1282 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.067270
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   7/40] reward=+3.0 checkpoints= 5/34 len= 982 outcome=died pg_loss=+0.0673
+  [anchor-check] episode mean(bce*advantage)=-0.0891  anchor mean(bce)*weight=+0.3549  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.112034
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   8/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.1120
+  [anchor-check] episode mean(bce*advantage)=+0.0021  anchor mean(bce)*weight=+0.5799  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.035837
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train   9/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=+0.0358
+  [anchor-check] episode mean(bce*advantage)=-0.0632  anchor mean(bce)*weight=+3.7895  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.115109
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  10/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.1151 [mem] VmRSS=449.5 MiB
+  [anchor-check] episode mean(bce*advantage)=+0.0082  anchor mean(bce)*weight=+0.3099  (anchor rows=300/601=49.9% of combined batch)
+TRAIN: T=601 minibatch_size=601 n_minibatches/epoch=1 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.158781
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  11/40] reward=-0.5 checkpoints= 0/34 len= 301 outcome=cp_terminated pg_loss=+0.1588
+  [anchor-check] episode mean(bce*advantage)=+0.0000  anchor mean(bce)*weight=+0.4587  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.030881
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  12/40] reward=+0.0 checkpoints= 0/34 len=3000 outcome=timeout pg_loss=+0.0309
+  [anchor-check] episode mean(bce*advantage)=-0.0272  anchor mean(bce)*weight=+0.3689  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.001142
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  13/40] reward=+4.0 checkpoints= 4/34 len=3000 outcome=timeout pg_loss=-0.0011
+  [anchor-check] episode mean(bce*advantage)=-0.0320  anchor mean(bce)*weight=+0.5061  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.011276
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  14/40] reward=+9.0 checkpoints= 9/34 len=3000 outcome=timeout pg_loss=-0.0113
+  [anchor-check] episode mean(bce*advantage)=-0.0369  anchor mean(bce)*weight=+0.2976  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.026280
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  15/40] reward=+10.0 checkpoints=10/34 len=3000 outcome=timeout pg_loss=-0.0263
+  [anchor-check] episode mean(bce*advantage)=-0.0569  anchor mean(bce)*weight=+0.4826  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.088329
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  16/40] reward=+6.0 checkpoints= 6/34 len=3000 outcome=timeout pg_loss=-0.0883
+  [anchor-check] episode mean(bce*advantage)=-0.0602  anchor mean(bce)*weight=+0.2511  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.035900
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  17/40] reward=+17.0 checkpoints=17/34 len=3000 outcome=timeout pg_loss=-0.0359
+  [anchor-check] episode mean(bce*advantage)=-0.0458  anchor mean(bce)*weight=+0.3824  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.015326
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  18/40] reward=+10.0 checkpoints=10/34 len=3000 outcome=timeout pg_loss=-0.0153
+  [anchor-check] episode mean(bce*advantage)=-0.0321  anchor mean(bce)*weight=+0.4362  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = -0.045275
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  19/40] reward=+13.0 checkpoints=13/34 len=3000 outcome=timeout pg_loss=-0.0453
+  [anchor-check] episode mean(bce*advantage)=+0.0477  anchor mean(bce)*weight=+1.0691  (anchor rows=300/3300=9.1% of combined batch)
+TRAIN: T=3300 minibatch_size=1650 n_minibatches/epoch=2 nepoch=1 lr=0.003 weight_decay=0.1
+ -> epoch 1/1 average pg_loss = 0.142171
+Weights saved to /home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin
+[train  20/40] reward=+5.0 checkpoints= 5/34 len=3000 outcome=timeout pg_loss=+0.1422 [mem] VmRSS=449.8 MiB

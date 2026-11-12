@@ -1,0 +1,38 @@
+# Angel Island Zone ACT 1: Continued
+
+>= 472 # Survived cutscene, probably
+((862,608),(958,763)) # Past the spikes; top+bottom fork
+((1068,1034),(1175,1091)) # Bottom route confirmed
+((452,825),(983,1249)) # The ENTIRE SPECIAL STAGE ROOM. It's a really big room. We can use this like a kill checkpoint if the model keeps going to this area.
+((1243,1097),(1307,1241)) # Smol ramp
+((1526,1328),(1821,1443)) # WATER AFTER RAMP, GET THE HELL OUT OF THERE (not a kill checkpoint)
+((1244,694),(1329,835)) # Top route begins
+((1654,775),(1747,854)) # Top route second platform
+((2147,668),(2241,886)) # Top route second platform ledge
+((2379,979),(2457,1059)) # Top route third platform
+((2807,868),(2929,991)) # Bottom/top routes converge; new water-bottom route branches
+((1364,921),(1807,1013)) # Almost certainly has fallen to bottom route
+((3255,978),(3303,1032)) # Loop entry
+((3104,894),(3305,933)) # Loop top
+((3096,933),(3137,1013)) # Loop left side
+((3311,1050),(3358,1101)) # Loop exit
+((1986,1071),(2088,1237)) # Bottom route midpoint
+((2378,1144),(2510,1250)) # Bottom route ledge
+((2597,1185),(2654,1246)) # Top of moving rock 1
+((2702,1130),(2765,1194)) # Top of moving rock 2
+((2817,1024),(2891,1193)) # Elevator to top route
+((3248,977),(3303,1032)) # Loop entrance
+((3092,901),(3303,936)) # Loop top
+((3081,936),(3147,1007)) # Loop left side
+((3312,1026),(3384,1115)) # Loop exit
+((3781,934),(3877,1018)) # Top platform 1
+((3509,731),(3624,884)) # Top platform 2
+((3646,734),(3747,872)) # Top platform 2 decaying ledge
+((3804,715),(3910,833)) # Final platform decaying ledge
+((3910,531),(3973,797)) # Ground; boss fight follows
+((2423,1314),(2980,1436)) # Fell into the bottom water section...
+((2958,1492),(3074,1617)) # Found the breakable ground, locked into bottom-water route
+((3317,1330),(3370,1442)) # Made it up the elevator, nearing convergence with top route
+((3378,1128),(3451,1253)) # Converged with the top route, somehow survived
+>= 4500 ### BOSS TRIGGER ###
+# For boss, disable normal X stagnation checks because camera is locked. Instead, watch boss 

@@ -1,0 +1,33 @@
+{
+  "game": "SonicAndKnuckles3-Genesis-v0",
+  "buttons": [
+    "B",
+    "A",
+    "MODE",
+    "START",
+    "UP",
+    "DOWN",
+    "LEFT",
+    "RIGHT",
+    "C",
+    "Y",
+    "X",
+    "Z"
+  ],
+  "learnable_buttons": [
+    "B",
+    "A",
+    "UP",
+    "DOWN",
+    "LEFT",
+    "RIGHT",
+    "C",
+    "Y",
+    "X",
+    "Z"
+  ],
+  "weights_file": "/home/foxo/gateway-vulkan-rl/sonic_policy_weights.bin",
+  "n_train": 2,
+  "n_baseline": 0,
+  "max_steps": 3000
+}

@@ -1,0 +1,14 @@
+Loaded 36 checkpoint boxes (32 checkpoint, 1 enemy, 2 hazard, 1 end-trigger)
+
+=== Training: 15 episodes, max_steps=7200, gamma=0.95, lr=0.003 ===
+[mem] VmRSS at training start: 64.6 MiB
+[train   1/15] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout [mem] VmRSS=324.4 MiB
+[train   2/15] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   3/15] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   4/15] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   5/15] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   6/15] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   7/15] reward=+4.0 checkpoints= 4/34 len=7200 outcome=timeout
+[train   8/15] reward=+5.0 checkpoints= 5/34 len=7200 outcome=timeout
+[train   9/15] reward=+3.0 checkpoints= 3/34 len=7200 outcome=timeout
+[train  10/15] reward=+6.0 checkpoints= 5/34 len=7200 outcome=timeout [mem] VmRSS=325.2 MiB

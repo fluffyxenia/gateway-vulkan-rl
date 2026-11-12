@@ -1,0 +1,362 @@
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = AMD Radeon Vega 10 Graphics (RADV RAVEN) (radv) | uma: 1 | fp16: 1 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+Testing 2 devices
+
+Backend 1/2: Vulkan0
+  Device description: AMD Radeon Vega 10 Graphics (RADV RAVEN)
+  Device memory: 4464 MB (1051 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  118/118 tests passed
+  Backend Vulkan0 adamw: [1;32mOK[0m
+
+Backend 2/2: CPU
+  Device description: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx
+  Device memory: 6881 MB (6881 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward, optimizer=adamw): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_backward, optimizer=adamw): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_forward, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=grads, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=weights, optimizer=adamw): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=results, optimizer=adamw): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  118/118 tests passed
+  Backend CPU adamw: [1;32mOK[0m
+
+Backend 1/2: Vulkan0
+  Device description: AMD Radeon Vega 10 Graphics (RADV RAVEN)
+  Device memory: 4464 MB (1049 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  46/46 tests passed
+  Backend Vulkan0 sgd: [1;32mOK[0m
+
+Backend 2/2: CPU
+  Device description: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx
+  Device memory: 6881 MB (6881 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward, optimizer=sgd): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  46/46 tests passed
+  Backend CPU sgd: [1;32mOK[0m
+
+4/4 backend*optimizer passed
+[1;32mOK[0m
