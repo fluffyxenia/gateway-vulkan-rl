@@ -1,0 +1,3 @@
+[submodule "llama-ops.cpp"]
+	path = llama-ops.cpp
+	url = https://github.com/fluffyxenia/llama-ops.cpp.git
